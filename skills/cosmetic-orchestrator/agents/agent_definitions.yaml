@@ -1,0 +1,427 @@
+# Cosmetic Orchestrator Agent Definitions
+# 각 Phase별 에이전트 설정 및 실행 규칙 정의
+
+orchestrator:
+  name: cosmetic-orchestrator
+  description: 화장품 R&D 멀티 에이전트 오케스트레이터
+  version: "1.0.0"
+
+  session_config:
+    base_dir: ./sessions
+    naming_pattern: "{YYYYMMDD}_{HHMMSS}_{project_type}"
+    max_session_duration: 600  # seconds
+    auto_save_interval: 60     # seconds
+
+  global_tools:
+    - Read
+    - Write
+    - Edit
+    - Bash
+    - Glob
+    - Grep
+    - TodoWrite
+    - Task
+
+# ============================================================
+# PHASE 1: Context Initialization Agent
+# ============================================================
+phase1:
+  agent_id: context-initialization-agent
+  name: 컨텍스트 초기화 에이전트
+  skill_dependency: cosmetic-context-initialization
+
+  timeout: 30
+  retry_count: 1
+
+  inputs:
+    required:
+      - user_request     # 사용자 원본 요청
+      - session_dir      # 세션 디렉토리 경로
+    optional:
+      - skill_dir        # 스킬 디렉토리 경로 (기본: ./cosmetic-skills)
+      - previous_context # 이전 세션 컨텍스트
+
+  tasks:
+    - name: parse_request
+      description: 사용자 요청 파싱 및 키워드 추출
+      actions:
+        - extract_cosmetic_keywords
+        - identify_product_types
+        - detect_active_ingredients
+        - determine_output_expectations
+
+    - name: detect_project_type
+      description: 프로젝트 유형 감지
+      categories:
+        planning:
+          signals: ["신제품", "기획", "컨셉", "타겟", "포지셔닝", "전략"]
+          weight: 1.0
+        r_and_d:
+          signals: ["배합", "처방", "제형", "안정성", "테스트", "개발"]
+          weight: 1.0
+        regulatory:
+          signals: ["인허가", "심사", "규제", "등록", "CPSR", "수출"]
+          weight: 1.0
+        marketing:
+          signals: ["광고", "클레임", "마케팅", "홍보", "효능"]
+          weight: 1.0
+        safety:
+          signals: ["안전성", "독성", "자극", "EWG", "CIR"]
+          weight: 1.0
+
+    - name: establish_context
+      description: 세션 컨텍스트 설정
+      actions:
+        - create_session_config
+        - initialize_todo_list
+        - setup_logging
+
+  outputs:
+    report:
+      path: phase1_context_report.md
+      template: templates/phase1_report.md
+    data:
+      project_type: string
+      keywords: list[string]
+      intent: string
+      domain_signals: dict
+      confidence_score: float
+
+# ============================================================
+# PHASE 2: Resource Discovery Agent
+# ============================================================
+phase2:
+  agent_id: resource-discovery-agent
+  name: 리소스 탐색 에이전트
+  skill_dependency: get-available-resources
+
+  timeout: 30
+  retry_count: 1
+
+  inputs:
+    required:
+      - context_report   # Phase 1 출력
+      - session_dir      # 세션 디렉토리
+    optional:
+      - project_type     # 감지된 프로젝트 유형
+      - force_rescan     # 스킬 강제 재스캔
+
+  tasks:
+    - name: scan_skills
+      description: 사용 가능한 스킬 스캔
+      actions:
+        - read_all_skill_md_files
+        - check_implementation_status
+        - catalog_scripts_and_references
+        - detect_skill_dependencies
+
+    - name: match_skills
+      description: 프로젝트 유형에 맞는 스킬 매칭
+      mapping:
+        planning:
+          primary: [trend-analysis, consumer-insight, product-positioning]
+          secondary: [claim-substantiation, regulatory-compliance]
+        r_and_d:
+          primary: [formulation-calculator, formulation-strategy, ingredient-compatibility]
+          secondary: [stability-predictor, skin-penetration, rdkit-cosmetic]
+        regulatory:
+          primary: [regulatory-compliance, regulatory-checker, cpsr-generator]
+          secondary: [cosing-database, kfda-ingredient]
+        marketing:
+          primary: [claim-substantiation, consumer-insight]
+          secondary: [trend-analysis, product-positioning]
+        safety:
+          primary: [ewg-skindeep, cir-safety, cosdna-analysis, irritation-predictor]
+          secondary: [cpsr-generator, incidecoder-analysis]
+
+    - name: check_mcps
+      description: 사용 가능한 MCP 서버 확인
+      mcp_mapping:
+        supabase: [data_storage, query]
+        brave-search: [web_search, trend_research]
+        sequential-thinking: [complex_analysis, multi_step]
+        infranodus: [knowledge_graph, text_analysis]
+        github: [code_management, version_control]
+
+  outputs:
+    report:
+      path: phase2_resource_report.md
+      template: templates/phase2_report.md
+    data:
+      recommended_skills:
+        primary: list[string]
+        secondary: list[string]
+      available_mcps: list[string]
+      skill_status: dict
+
+# ============================================================
+# PHASE 3: Specialist Execution Agent(s)
+# ============================================================
+phase3:
+  agent_id: specialist-agent
+  name: 전문 실행 에이전트
+  skill_dependency: dynamic  # Phase 2 결과에 따라 동적 결정
+
+  timeout: 300  # 가장 긴 타임아웃 (5분)
+  retry_count: 2
+
+  inputs:
+    required:
+      - context_report    # Phase 1 출력
+      - resource_report   # Phase 2 출력
+      - recommended_skills
+      - session_dir
+    optional:
+      - specific_tasks    # 사용자 지정 작업
+      - skip_skills       # 건너뛸 스킬
+
+  specialist_types:
+    formulation:
+      name: 배합 전문 에이전트
+      skills:
+        - formulation-calculator
+        - formulation-strategy
+        - ingredient-compatibility
+        - stability-predictor
+      tasks:
+        - hlb_calculation
+        - base_selection
+        - compatibility_check
+        - stability_prediction
+      mcps: [supabase]
+
+    safety:
+      name: 안전성 전문 에이전트
+      skills:
+        - ewg-skindeep
+        - cir-safety
+        - cosdna-analysis
+        - irritation-predictor
+        - cpsr-generator
+      tasks:
+        - safety_scoring
+        - toxicity_review
+        - irritation_prediction
+        - mos_calculation
+      mcps: []
+
+    regulatory:
+      name: 규제 전문 에이전트
+      skills:
+        - regulatory-compliance
+        - regulatory-checker
+        - cosing-database
+        - kfda-ingredient
+        - cpsr-generator
+      tasks:
+        - multi_country_check
+        - compliance_verification
+        - ingredient_status_check
+        - cpsr_generation
+      mcps: [supabase]
+
+    trend:
+      name: 트렌드 전문 에이전트
+      skills:
+        - trend-analysis
+        - consumer-insight
+        - mintel-gnpd
+        - product-positioning
+      tasks:
+        - market_analysis
+        - consumer_research
+        - positioning_strategy
+        - competitor_analysis
+      mcps: [brave-search, infranodus]
+
+    efficacy:
+      name: 효능 전문 에이전트
+      skills:
+        - claim-substantiation
+        - ingredient-efficacy-analyzer
+        - cosmetic-clinical-reports
+      tasks:
+        - claim_design
+        - efficacy_analysis
+        - clinical_study_design
+        - substantiation_strategy
+      mcps: []
+
+  outputs:
+    report:
+      path: phase3_specialist_report.md
+      template: templates/phase3_report.md
+    data:
+      task_results: list[dict]
+      artifacts: list[string]
+      execution_log: list[dict]
+
+# ============================================================
+# PHASE 4: Validation Agent
+# ============================================================
+phase4:
+  agent_id: validation-agent
+  name: 검증 에이전트
+  skill_dependency: null  # 독립 에이전트
+
+  timeout: 60
+  retry_count: 1
+
+  inputs:
+    required:
+      - all_phase_reports  # Phase 1-3 보고서
+      - task_results       # Phase 3 결과
+      - session_dir
+    optional:
+      - validation_rules   # 커스텀 검증 규칙
+
+  tasks:
+    - name: completeness_check
+      description: 완전성 검사
+      checks:
+        - all_required_outputs_present
+        - no_empty_or_null_values
+        - valid_data_formats
+        - expected_artifact_types
+
+    - name: consistency_check
+      description: 일관성 검사
+      checks:
+        - cross_reference_data
+        - detect_contradictions
+        - verify_calculations
+        - validate_units
+
+    - name: gap_analysis
+      description: 갭 분석
+      checks:
+        - identify_missing_info
+        - note_unanswered_questions
+        - flag_incomplete_analyses
+        - check_scope_coverage
+
+    - name: generate_action_items
+      description: 액션 아이템 생성
+      priority_levels:
+        - critical: "작업 진행 불가"
+        - high: "결과 신뢰도 영향"
+        - medium: "개선 권장"
+        - low: "선택적 보완"
+
+  outputs:
+    report:
+      path: phase4_validation_report.md
+      template: templates/phase4_report.md
+    data:
+      completeness_score: float  # 0-100
+      consistency_score: float   # 0-100
+      issues: list[dict]
+      revised_action_items: list[string]
+      warnings: list[string]
+
+# ============================================================
+# PHASE 5: Synthesis Agent
+# ============================================================
+phase5:
+  agent_id: synthesis-agent
+  name: 종합 에이전트
+  skill_dependency: null  # 독립 에이전트
+
+  timeout: 120
+  retry_count: 1
+
+  inputs:
+    required:
+      - all_phase_reports
+      - validation_report
+      - session_dir
+    optional:
+      - revised_action_items
+      - output_format       # markdown, pdf, docx
+      - include_appendices  # 부록 포함 여부
+
+  tasks:
+    - name: consolidate
+      description: 결과 통합
+      actions:
+        - merge_all_outputs
+        - remove_duplicates
+        - organize_by_category
+        - resolve_conflicts
+
+    - name: summarize
+      description: 요약 생성
+      sections:
+        - executive_summary
+        - key_findings
+        - critical_decisions
+        - risk_factors
+
+    - name: recommend
+      description: 권장사항 도출
+      categories:
+        - immediate_actions
+        - short_term_tasks
+        - long_term_considerations
+        - follow_up_required
+
+    - name: format_deliverable
+      description: 최종 산출물 포맷
+      formats:
+        markdown:
+          enabled: true
+          template: templates/final_report.md
+        json:
+          enabled: true
+          schema: schemas/final_report.json
+
+  outputs:
+    report:
+      path: phase5_final_report.md
+      template: templates/phase5_report.md
+    data:
+      executive_summary: string
+      key_findings: list[string]
+      recommendations: list[string]
+      next_steps: list[string]
+      deliverables: list[string]
+      session_stats:
+        total_duration: int
+        phases_completed: int
+        skills_used: list[string]
+        artifacts_generated: int
+
+# ============================================================
+# Error Handling & Recovery
+# ============================================================
+error_handling:
+  on_phase_failure:
+    phase1:
+      retry: true
+      fallback: "use_default_context"
+      escalate: true  # 실패 시 사용자에게 알림
+
+    phase2:
+      retry: true
+      fallback: "use_default_skill_set"
+      escalate: false
+
+    phase3:
+      retry: true
+      fallback: "skip_failed_skill"
+      escalate: true
+
+    phase4:
+      retry: false
+      fallback: "mark_as_partial"
+      escalate: false
+
+    phase5:
+      retry: true
+      fallback: "generate_partial_report"
+      escalate: true
+
+  logging:
+    level: INFO
+    format: "[{timestamp}] [{phase}] [{level}] {message}"
+    destination: logs/orchestrator.log

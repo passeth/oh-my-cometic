@@ -497,9 +497,238 @@ Task(subagent_type="prometheus", prompt="신제품 개발 워크플로우 계획
 
 ### 추가된 화장품 기능
 - 6개 화장품 전문 에이전트
+- **38개 화장품 전문 스킬**
 - 화장품 키워드 자동 감지
 - 화장품 슬래시 명령어
 - 배합/안전성/규제 특화 프롬프트
+
+---
+
+## 화장품 전문 스킬 (38개)
+
+### 1. K-Dense 핵심 스킬 (5개)
+
+K-Dense 수준의 기술 보고서 생성을 위한 핵심 스킬
+
+| 스킬 | 명령어 | 설명 |
+|-----|-------|-----|
+| **pubmed-search** | `/pubmed-search <query>` | PubMed 학술 검색 및 논문 정보 추출 |
+| **ingredient-deep-dive** | `/ingredient-deep-dive <ingredient>` | 성분 심층 분석 보고서 생성 |
+| **mechanism-diagram-generator** | `/mechanism-diagram <ingredient>` | 작용 기전 Mermaid 다이어그램 생성 |
+| **clinical-evidence-aggregator** | `/clinical-evidence <topic>` | 임상 근거 수집 및 등급화 |
+| **reference-manager** | `/reference-manager` | 학술 참고문헌 관리 및 인용 형식 |
+
+#### K-Dense 보고서 생성 워크플로우
+
+```
+/ingredient-deep-dive Niacinamide
+  ↓
+/pubmed-search "niacinamide skin barrier clinical"
+  ↓
+/clinical-evidence niacinamide barrier repair
+  ↓
+/mechanism-diagram niacinamide
+  ↓
+/reference-manager --format APA
+```
+
+### 2. 데이터베이스/API 연동 스킬 (11개)
+
+외부 데이터베이스 및 API 연동
+
+| 스킬 | 데이터 소스 | 용도 |
+|-----|-----------|-----|
+| **cosing-database** | EU CosIng | EU 성분 규제 정보 |
+| **kfda-ingredient** | 식약처 | 한국 기능성 성분 DB |
+| **ewg-skindeep** | EWG Skin Deep | 성분 안전성 등급 |
+| **cir-safety** | CIR | 성분 안전성 리뷰 |
+| **mintel-gnpd** | Mintel GNPD | 글로벌 신제품 트렌드 |
+| **ifra-standards** | IFRA | 향료 사용 기준 |
+| **icid-database** | ICID | 국제 성분 사전 |
+| **ulprospector-integration** | UL Prospector | 원료 공급업체 정보 |
+| **cosmily-integration** | Cosmily | 성분 분석 데이터 |
+| **incidecoder-analysis** | INCIDecoder | 성분 해석 정보 |
+| **cosdna-analysis** | CosDNA | 성분 분석 데이터 |
+
+#### 데이터베이스 스킬 사용 예시
+
+```
+> "나이아신아마이드 CosIng 정보 확인해줘"
+📊 cosing-database 스킬 활성화...
+- INCI명: NIACINAMIDE
+- CAS 번호: 98-92-0
+- EU 규제: 허용 (Annex 없음)
+- 기능: Skin conditioning
+
+> "이 성분 EWG 등급 알려줘"
+🔬 ewg-skindeep 스킬 활성화...
+- EWG 등급: 1 (Low Hazard)
+- 데이터 가용성: Fair
+- 우려사항: None
+```
+
+### 3. 분석/계산 스킬 (9개)
+
+포뮬레이션 및 성분 분석 도구
+
+| 스킬 | 기능 | 적용 |
+|-----|-----|-----|
+| **formulation-calculator** | 포뮬레이션 계산기 | 배합 비율 계산 |
+| **ingredient-compatibility** | 성분 호환성 검사 | 배합 금기 확인 |
+| **stability-predictor** | 안정성 예측 | 제형 안정성 분석 |
+| **skin-penetration** | 피부 투과 예측 | 성분 전달 분석 |
+| **irritation-predictor** | 자극성 예측 | 민감성 평가 |
+| **rdkit-cosmetic** | 분자 특성 계산 | 화학적 분석 |
+| **concentration-converter** | 농도 단위 변환 | ppm, %, mg/mL 변환 |
+| **batch-calculator** | 배치 계산기 | 생산량 스케일업 |
+| **ingredient-efficacy-analyzer** | 성분 효능 분석 | 효능 비교 |
+
+#### 분석/계산 스킬 사용 예시
+
+```
+> "이 에멀전 배합의 HLB 계산해줘"
+🧮 formulation-calculator 스킬 활성화...
+- Required HLB: 12.5
+- Emulsifier blend: Polysorbate 60 (40%) + Span 60 (60%)
+- Calculated HLB: 12.48 ✅
+
+> "레티놀과 AHA 같이 써도 돼?"
+⚠️ ingredient-compatibility 스킬 활성화...
+- 호환성: 주의 필요
+- pH 충돌: Retinol (pH 5.5-6.5) vs AHA (pH 3.0-4.0)
+- 권장: 별도 루틴 사용 또는 시간차 적용
+
+> "100g → 5kg 스케일업 계산"
+📐 batch-calculator 스킬 활성화...
+- Scale factor: 50x
+- 원료별 배합량 자동 계산 완료
+```
+
+### 4. 규제/문서 스킬 (5개)
+
+규제 대응 및 문서 생성
+
+| 스킬 | 기능 | 대상 규제 |
+|-----|-----|---------|
+| **regulatory-compliance** | 규제 준수 확인 | 글로벌 |
+| **regulatory-checker** | 규제 요건 검사 | 한국/EU/미국 |
+| **claim-substantiation** | 클레임 근거 생성 | 마케팅 클레임 |
+| **cpsr-generator** | CPSR 문서 생성 | EU 규정 |
+| **inci-converter** | INCI명 변환 | 전성분 표기 |
+
+#### 규제/문서 스킬 사용 예시
+
+```
+> "EU 수출용 CPSR 초안 생성해줘"
+📜 cpsr-generator 스킬 활성화...
+- Part A: 안전성 정보 수집 중...
+- Part B: 안전성 평가 템플릿 생성 중...
+- MoS 계산 포함 완료
+
+> "이 클레임 사용해도 돼? '주름 개선'"
+✅ claim-substantiation 스킬 활성화...
+- 한국: 기능성 화장품 심사 필요 (인증번호 표기)
+- EU: "fine lines" 표현 권장 (의약품 클레임 주의)
+- 미국: 합리적 근거 (substantiation) 필요
+```
+
+### 5. 마케팅/전략 스킬 (4개)
+
+제품 기획 및 마케팅 지원
+
+| 스킬 | 기능 | 적용 |
+|-----|-----|-----|
+| **product-positioning** | 제품 포지셔닝 분석 | 시장 전략 |
+| **consumer-insight** | 소비자 인사이트 | 고객 분석 |
+| **trend-analysis** | 트렌드 분석 | 시장 동향 |
+| **formulation-strategy** | 포뮬레이션 전략 | 제형 기획 |
+
+#### 마케팅/전략 스킬 사용 예시
+
+```
+> "2025년 스킨케어 트렌드 분석해줘"
+📈 trend-analysis 스킬 활성화...
+- 핵심 트렌드: 스킨 배리어, 펩타이드, 지속가능성
+- 떠오르는 성분: 바쿠치올, 에크토인, 트라넥삼산
+- 주목할 포맷: 하이브리드 제형, 리필 시스템
+
+> "30대 여성 타겟 에센스 포지셔닝 제안"
+🎯 product-positioning 스킬 활성화...
+- 타겟 페르소나: 바쁜 직장인, 효율 중시
+- 포지셔닝 키워드: "올인원", "시간 절약", "검증된 효능"
+- 경쟁 차별점: 고농축 + 간편 사용성
+```
+
+### 6. 시스템/유틸리티 스킬 (4개)
+
+시스템 운영 및 통합
+
+| 스킬 | 기능 | 용도 |
+|-----|-----|-----|
+| **cosmetic-context-initialization** | 컨텍스트 초기화 | 세션 설정 |
+| **get-available-resources** | 리소스 확인 | 사용 가능 도구 |
+| **cosmetic-orchestrator** | 워크플로우 오케스트레이션 | 스킬 조합 |
+| **cosmetic-clinical-reports** | 임상 보고서 생성 | 문서 출력 |
+
+---
+
+## 스킬 조합 워크플로우
+
+### 신제품 개발 워크플로우
+
+```
+1. trend-analysis: 시장 트렌드 파악
+   ↓
+2. product-positioning: 포지셔닝 설정
+   ↓
+3. formulation-strategy: 포뮬레이션 전략
+   ↓
+4. ingredient-compatibility: 성분 조합 검증
+   ↓
+5. regulatory-checker: 규제 적합성 확인
+```
+
+### 성분 리서치 워크플로우
+
+```
+1. ingredient-deep-dive: 기본 정보 수집
+   ↓
+2. pubmed-search: 학술 논문 검색
+   ↓
+3. ewg-skindeep + cir-safety: 안전성 평가
+   ↓
+4. clinical-evidence-aggregator: 근거 종합
+   ↓
+5. mechanism-diagram-generator: 시각화
+```
+
+### EU 수출 준비 워크플로우
+
+```
+1. cosing-database: EU CosIng 규제 확인
+   ↓
+2. ifra-standards: 향료 기준 검토
+   ↓
+3. regulatory-compliance: 규제 준수 확인
+   ↓
+4. cpsr-generator: CPSR 문서 생성
+   ↓
+5. inci-converter: 전성분 표기 검증
+```
+
+---
+
+## 스킬 통계
+
+| 카테고리 | 스킬 수 | 용도 |
+|---------|--------|-----|
+| K-Dense 핵심 | 5 | 심층 기술 보고서 |
+| 데이터베이스/API | 11 | 외부 데이터 연동 |
+| 분석/계산 | 9 | 포뮬레이션 분석 |
+| 규제/문서 | 5 | 규제 대응 |
+| 마케팅/전략 | 4 | 제품 기획 |
+| 시스템/유틸리티 | 4 | 시스템 운영 |
+| **총계** | **38** | - |
 
 ---
 

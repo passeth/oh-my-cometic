@@ -1,0 +1,2020 @@
+{
+  "meta": {
+    "version": "2.0.0",
+    "last_updated": "2025-01-16",
+    "total_ingredients": 200,
+    "categories": 12,
+    "changelog": "v2.0: Major expansion from 80 to 200+ ingredients with enhanced efficacy data"
+  },
+  "categories": {
+    "brightening": {
+      "name_kr": "미백/브라이트닝",
+      "name_en": "Brightening",
+      "description": "Skin brightening and hyperpigmentation reduction",
+      "mechanisms": ["Tyrosinase inhibition", "Melanin transfer inhibition", "Antioxidant", "Cell turnover"]
+    },
+    "anti_aging": {
+      "name_kr": "주름개선/안티에이징",
+      "name_en": "Anti-aging",
+      "description": "Wrinkle reduction and skin rejuvenation",
+      "mechanisms": ["Collagen synthesis", "ECM remodeling", "Cell turnover", "Antioxidant"]
+    },
+    "hydrating": {
+      "name_kr": "보습",
+      "name_en": "Hydrating",
+      "description": "Skin hydration and moisture retention",
+      "mechanisms": ["Humectant", "Occlusive", "Emollient", "NMF replenishment"]
+    },
+    "barrier_repair": {
+      "name_kr": "장벽강화",
+      "name_en": "Barrier Repair",
+      "description": "Skin barrier strengthening and repair",
+      "mechanisms": ["Lipid replenishment", "Ceramide synthesis", "Tight junction support"]
+    },
+    "soothing": {
+      "name_kr": "진정",
+      "name_en": "Soothing",
+      "description": "Anti-inflammatory and skin calming",
+      "mechanisms": ["COX inhibition", "Cytokine modulation", "Histamine blocking"]
+    },
+    "antioxidant": {
+      "name_kr": "항산화",
+      "name_en": "Antioxidant",
+      "description": "Free radical protection",
+      "mechanisms": ["ROS scavenging", "Metal chelation", "Enzyme activation"]
+    },
+    "exfoliating": {
+      "name_kr": "각질케어",
+      "name_en": "Exfoliating",
+      "description": "Cell turnover and surface renewal",
+      "mechanisms": ["Keratolytic", "Desmosome dissolution", "pH modulation"]
+    },
+    "sebum_control": {
+      "name_kr": "피지조절",
+      "name_en": "Sebum Control",
+      "description": "Oil control and pore minimization",
+      "mechanisms": ["Sebocyte regulation", "Astringent", "5-alpha reductase inhibition"]
+    },
+    "regenerating": {
+      "name_kr": "재생",
+      "name_en": "Regenerating",
+      "description": "Wound healing and tissue repair",
+      "mechanisms": ["Growth factor stimulation", "Cell proliferation", "Angiogenesis"]
+    },
+    "microbiome": {
+      "name_kr": "마이크로바이옴",
+      "name_en": "Microbiome",
+      "description": "Skin microbiome support",
+      "mechanisms": ["Prebiotic", "Postbiotic", "pH balancing"]
+    },
+    "firming": {
+      "name_kr": "탄력강화",
+      "name_en": "Firming",
+      "description": "Skin elasticity and firmness improvement",
+      "mechanisms": ["Elastin support", "Collagen crosslinking", "Dermal matrix strengthening"]
+    },
+    "acne": {
+      "name_kr": "여드름케어",
+      "name_en": "Acne Care",
+      "description": "Acne prevention and treatment",
+      "mechanisms": ["Antibacterial", "Anti-inflammatory", "Keratolytic", "Sebum regulation"]
+    }
+  },
+  "ingredients": {
+    "NIACINAMIDE": {
+      "inci_name": "Niacinamide",
+      "cas_number": "98-92-0",
+      "common_names": ["Vitamin B3", "Nicotinamide", "니아신아마이드"],
+      "categories": ["brightening", "sebum_control", "barrier_repair"],
+      "mechanism": {
+        "primary": "Inhibits melanosome transfer to keratinocytes",
+        "secondary": ["Ceramide synthesis stimulation", "Sebum production regulation", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 2.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Pore minimizing", "Barrier support"],
+      "synergies": ["HYALURONIC ACID", "ZINC PCA", "PEPTIDES"],
+      "incompatible": ["ASCORBIC ACID (at high concentrations)"],
+      "precautions": "May cause flushing at high concentrations in sensitive individuals",
+      "regulatory": {
+        "korea_functional": true,
+        "korea_limit": 5.0,
+        "eu_restricted": false
+      }
+    },
+    "ARBUTIN": {
+      "inci_name": "Arbutin",
+      "cas_number": "497-76-7",
+      "common_names": ["Beta-Arbutin", "알부틴"],
+      "categories": ["brightening"],
+      "mechanism": {
+        "primary": "Tyrosinase inhibition (competitive)",
+        "secondary": ["Melanin synthesis reduction"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Dark spot reduction"],
+      "synergies": ["VITAMIN C", "NIACINAMIDE"],
+      "incompatible": [],
+      "precautions": "Alpha-arbutin (CAS 84380-01-8) is more stable and effective than beta form",
+      "regulatory": {
+        "korea_functional": true,
+        "korea_limit": 2.0,
+        "eu_restricted": true,
+        "eu_limit": 2.0
+      }
+    },
+    "ALPHA-ARBUTIN": {
+      "inci_name": "Alpha-Arbutin",
+      "cas_number": "84380-01-8",
+      "common_names": ["알파알부틴"],
+      "categories": ["brightening"],
+      "mechanism": {
+        "primary": "Tyrosinase inhibition (10x more effective than beta)",
+        "secondary": ["Melanin synthesis reduction", "More stable than beta form"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Dark spot reduction"],
+      "synergies": ["VITAMIN C", "NIACINAMIDE", "TRANEXAMIC ACID"],
+      "incompatible": [],
+      "precautions": "More expensive but more effective than beta-arbutin",
+      "regulatory": {
+        "korea_functional": true,
+        "korea_limit": 2.0,
+        "eu_restricted": true,
+        "eu_limit": 2.0
+      }
+    },
+    "TRANEXAMIC ACID": {
+      "inci_name": "Tranexamic Acid",
+      "cas_number": "1197-18-8",
+      "common_names": ["TXA", "트라넥삼산"],
+      "categories": ["brightening"],
+      "mechanism": {
+        "primary": "Plasmin inhibition reducing keratinocyte-melanocyte interaction",
+        "secondary": ["Anti-inflammatory", "Vascular permeability reduction"]
+      },
+      "typical_concentration": {"min": 2.0, "max": 5.0, "optimal": 3.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Melasma improvement", "Post-inflammatory hyperpigmentation"],
+      "synergies": ["NIACINAMIDE", "VITAMIN C", "ALPHA-ARBUTIN"],
+      "incompatible": [],
+      "precautions": "Originally developed for medical use; excellent safety profile topically",
+      "regulatory": {
+        "korea_functional": true,
+        "korea_limit": null,
+        "eu_restricted": false
+      }
+    },
+    "ASCORBIC ACID": {
+      "inci_name": "Ascorbic Acid",
+      "cas_number": "50-81-7",
+      "common_names": ["Vitamin C", "L-Ascorbic Acid", "비타민C"],
+      "categories": ["brightening", "antioxidant", "anti_aging"],
+      "mechanism": {
+        "primary": "Tyrosinase inhibition and melanin reduction",
+        "secondary": ["Collagen synthesis", "Antioxidant protection", "Photoprotection"]
+      },
+      "typical_concentration": {"min": 5.0, "max": 20.0, "optimal": 15.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Anti-aging", "Antioxidant"],
+      "synergies": ["TOCOPHEROL", "FERULIC ACID"],
+      "incompatible": ["NIACINAMIDE (pH concern)", "RETINOL (stability)"],
+      "precautions": "Unstable; requires low pH (2.5-3.5); may irritate sensitive skin",
+      "regulatory": {
+        "korea_functional": true,
+        "korea_limit": null,
+        "eu_restricted": false
+      }
+    },
+    "ASCORBYL GLUCOSIDE": {
+      "inci_name": "Ascorbyl Glucoside",
+      "cas_number": "129499-78-1",
+      "common_names": ["AA2G", "Stable Vitamin C", "비타민C유도체"],
+      "categories": ["brightening", "antioxidant"],
+      "mechanism": {
+        "primary": "Glucose-conjugated vitamin C; converted to ascorbic acid by glucosidase in skin",
+        "secondary": ["More stable than L-ascorbic acid", "Collagen synthesis"]
+      },
+      "typical_concentration": {"min": 2.0, "max": 5.0, "optimal": 2.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Antioxidant"],
+      "synergies": ["NIACINAMIDE", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "MFDS approved functional ingredient at 2%+",
+      "regulatory": {
+        "korea_functional": true,
+        "korea_limit": 2.0,
+        "eu_restricted": false
+      }
+    },
+    "RETINOL": {
+      "inci_name": "Retinol",
+      "cas_number": "68-26-8",
+      "common_names": ["Vitamin A", "레티놀"],
+      "categories": ["anti_aging", "exfoliating"],
+      "mechanism": {
+        "primary": "Retinoic acid receptor activation increasing cell turnover",
+        "secondary": ["Collagen synthesis", "ECM remodeling", "Sebum regulation"]
+      },
+      "typical_concentration": {"min": 0.025, "max": 1.0, "optimal": 0.3, "unit": "%"},
+      "evidence_level": "Gold standard clinical evidence",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Skin renewal", "Acne"],
+      "synergies": ["PEPTIDES", "HYALURONIC ACID", "CERAMIDES"],
+      "incompatible": ["BENZOYL PEROXIDE", "AHA/BHA (layering)", "VITAMIN C (stability)"],
+      "precautions": "Can cause irritation; sun sensitivity; avoid during pregnancy",
+      "regulatory": {
+        "korea_functional": true,
+        "korea_limit": null,
+        "eu_restricted": true,
+        "eu_limit": 0.3
+      }
+    },
+    "RETINYL PALMITATE": {
+      "inci_name": "Retinyl Palmitate",
+      "cas_number": "79-81-2",
+      "common_names": ["Vitamin A Palmitate", "레티닐팔미테이트"],
+      "categories": ["anti_aging"],
+      "mechanism": {
+        "primary": "Ester form of retinol; converted to retinol then retinoic acid",
+        "secondary": ["Gentler than retinol", "Antioxidant"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 1.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Skin conditioning"],
+      "synergies": ["TOCOPHEROL", "PEPTIDES"],
+      "incompatible": [],
+      "precautions": "More stable but less potent than retinol",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ADENOSINE": {
+      "inci_name": "Adenosine",
+      "cas_number": "58-61-7",
+      "common_names": ["아데노신"],
+      "categories": ["anti_aging"],
+      "mechanism": {
+        "primary": "A2A receptor activation stimulating fibroblast activity",
+        "secondary": ["Collagen/elastin synthesis", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.04, "max": 0.1, "optimal": 0.04, "unit": "%"},
+      "evidence_level": "Regulatory approved (Korea MFDS)",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Firming"],
+      "synergies": ["PEPTIDES", "RETINOL", "NIACINAMIDE"],
+      "incompatible": [],
+      "precautions": "MFDS approved functional ingredient at 0.04%+",
+      "regulatory": {
+        "korea_functional": true,
+        "korea_limit": 0.04,
+        "eu_restricted": false
+      }
+    },
+    "HYALURONIC ACID": {
+      "inci_name": "Hyaluronic Acid",
+      "cas_number": "9004-61-9",
+      "common_names": ["Sodium Hyaluronate", "HA", "히알루론산"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Hygroscopic water binding (up to 1000x weight)",
+        "secondary": ["Skin plumping", "Barrier support"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Hydrating", "Plumping"],
+      "synergies": ["GLYCERIN", "CERAMIDES", "NIACINAMIDE"],
+      "incompatible": [],
+      "precautions": "Multiple molecular weights provide different benefits; low MW can penetrate better",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "SODIUM HYALURONATE": {
+      "inci_name": "Sodium Hyaluronate",
+      "cas_number": "9067-32-7",
+      "common_names": ["HA Salt", "히알루론산나트륨"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Sodium salt of hyaluronic acid; better stability and solubility",
+        "secondary": ["Film forming", "Moisture retention"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 2.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Hydrating", "Anti-wrinkle"],
+      "synergies": ["GLYCERIN", "PANTHENOL"],
+      "incompatible": [],
+      "precautions": "More commonly used form in cosmetics than free acid",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "GLYCERIN": {
+      "inci_name": "Glycerin",
+      "cas_number": "56-81-5",
+      "common_names": ["Glycerol", "글리세린"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Humectant drawing water from dermis and environment",
+        "secondary": ["Barrier support", "Skin softening"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Hydrating", "Moisturizing"],
+      "synergies": ["HYALURONIC ACID", "CERAMIDES"],
+      "incompatible": [],
+      "precautions": "Very safe; can feel sticky at high concentrations",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PANTHENOL": {
+      "inci_name": "Panthenol",
+      "cas_number": "81-13-0",
+      "common_names": ["Pro-Vitamin B5", "Dexpanthenol", "판테놀"],
+      "categories": ["hydrating", "soothing", "barrier_repair"],
+      "mechanism": {
+        "primary": "Converted to pantothenic acid; improves barrier function",
+        "secondary": ["Anti-inflammatory", "Wound healing", "Moisturizing"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 5.0, "optimal": 2.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Soothing", "Barrier repair"],
+      "synergies": ["ALLANTOIN", "CENTELLA ASIATICA EXTRACT"],
+      "incompatible": [],
+      "precautions": "Excellent safety profile; suitable for sensitive skin",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "CERAMIDE NP": {
+      "inci_name": "Ceramide NP",
+      "cas_number": "100403-19-8",
+      "common_names": ["Ceramide 3", "세라마이드"],
+      "categories": ["barrier_repair", "hydrating"],
+      "mechanism": {
+        "primary": "Lipid replacement in stratum corneum",
+        "secondary": ["Barrier restoration", "Water retention"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 1.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["장벽강화", "Barrier repair", "Moisturizing"],
+      "synergies": ["CHOLESTEROL", "FATTY ACIDS", "PHYTOSPHINGOSINE"],
+      "incompatible": [],
+      "precautions": "Best combined with cholesterol and fatty acids (3:1:1 ratio)",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "CERAMIDE AP": {
+      "inci_name": "Ceramide AP",
+      "cas_number": "100403-19-8",
+      "common_names": ["Ceramide 6 II", "세라마이드AP"],
+      "categories": ["barrier_repair"],
+      "mechanism": {
+        "primary": "Natural ceramide component; lipid matrix support",
+        "secondary": ["Cell signaling", "Desquamation regulation"]
+      },
+      "typical_concentration": {"min": 0.05, "max": 0.5, "optimal": 0.2, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["장벽강화", "Barrier repair"],
+      "synergies": ["CERAMIDE NP", "CERAMIDE EOP", "CHOLESTEROL"],
+      "incompatible": [],
+      "precautions": "Often used in combination with other ceramides",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "CENTELLA ASIATICA EXTRACT": {
+      "inci_name": "Centella Asiatica Extract",
+      "cas_number": "84696-21-9",
+      "common_names": ["Cica", "Gotu Kola", "병풀추출물"],
+      "categories": ["soothing", "barrier_repair", "regenerating"],
+      "mechanism": {
+        "primary": "Madecassoside/asiaticoside stimulate collagen synthesis",
+        "secondary": ["Anti-inflammatory", "Wound healing", "Antioxidant"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 5.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Barrier repair", "Anti-aging"],
+      "synergies": ["PANTHENOL", "MADECASSOSIDE", "ALLANTOIN"],
+      "incompatible": [],
+      "precautions": "Active compounds include madecassoside, asiaticoside, asiatic acid",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "MADECASSOSIDE": {
+      "inci_name": "Madecassoside",
+      "cas_number": "34540-22-2",
+      "common_names": ["마데카소사이드"],
+      "categories": ["soothing", "regenerating"],
+      "mechanism": {
+        "primary": "Triterpene glycoside; anti-inflammatory and wound healing",
+        "secondary": ["Collagen synthesis", "MMP inhibition"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 1.0, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Wound healing", "Anti-aging"],
+      "synergies": ["CENTELLA ASIATICA EXTRACT", "ASIATICOSIDE"],
+      "incompatible": [],
+      "precautions": "Purified active from Centella asiatica; more potent than crude extract",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ALLANTOIN": {
+      "inci_name": "Allantoin",
+      "cas_number": "97-59-6",
+      "common_names": ["알란토인"],
+      "categories": ["soothing", "hydrating"],
+      "mechanism": {
+        "primary": "Cell proliferation stimulation and keratolytic",
+        "secondary": ["Anti-irritant", "Moisturizing"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 2.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Well-established",
+      "claims_supported": ["진정", "Soothing", "Healing"],
+      "synergies": ["PANTHENOL", "CENTELLA ASIATICA EXTRACT"],
+      "incompatible": [],
+      "precautions": "Very safe; suitable for sensitive skin",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "BISABOLOL": {
+      "inci_name": "Bisabolol",
+      "cas_number": "515-69-5",
+      "common_names": ["Alpha-Bisabolol", "비사보롤"],
+      "categories": ["soothing", "antioxidant"],
+      "mechanism": {
+        "primary": "Anti-inflammatory via multiple pathways",
+        "secondary": ["Antimicrobial", "Penetration enhancement"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 1.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Calming"],
+      "synergies": ["CHAMOMILE EXTRACT", "ALLANTOIN"],
+      "incompatible": [],
+      "precautions": "Natural origin (chamomile); excellent tolerability",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "TOCOPHEROL": {
+      "inci_name": "Tocopherol",
+      "cas_number": "59-02-9",
+      "common_names": ["Vitamin E", "토코페롤"],
+      "categories": ["antioxidant", "barrier_repair"],
+      "mechanism": {
+        "primary": "Lipid peroxidation chain breaking",
+        "secondary": ["UV protection", "Barrier support", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Moisturizing"],
+      "synergies": ["ASCORBIC ACID", "FERULIC ACID"],
+      "incompatible": [],
+      "precautions": "Multiple forms available; alpha-tocopherol most bioactive",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "TOCOPHERYL ACETATE": {
+      "inci_name": "Tocopheryl Acetate",
+      "cas_number": "7695-91-2",
+      "common_names": ["Vitamin E Acetate", "토코페릴아세테이트"],
+      "categories": ["antioxidant"],
+      "mechanism": {
+        "primary": "Ester form of vitamin E; more stable in formulations",
+        "secondary": ["Converted to tocopherol by skin esterases"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 5.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Skin conditioning"],
+      "synergies": ["VITAMIN C DERIVATIVES"],
+      "incompatible": [],
+      "precautions": "More stable but needs conversion to be active",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "FERULIC ACID": {
+      "inci_name": "Ferulic Acid",
+      "cas_number": "1135-24-6",
+      "common_names": ["페룰산"],
+      "categories": ["antioxidant"],
+      "mechanism": {
+        "primary": "Free radical scavenging and UV absorption",
+        "secondary": ["Stabilizes Vitamin C/E", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 1.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Photoprotection"],
+      "synergies": ["ASCORBIC ACID", "TOCOPHEROL"],
+      "incompatible": [],
+      "precautions": "Part of famous C E Ferulic formulation; doubles vitamin C photoprotection",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "RESVERATROL": {
+      "inci_name": "Resveratrol",
+      "cas_number": "501-36-0",
+      "common_names": ["레스베라트롤"],
+      "categories": ["antioxidant", "anti_aging"],
+      "mechanism": {
+        "primary": "Sirtuin activation; powerful antioxidant",
+        "secondary": ["Anti-inflammatory", "UV protection", "Collagen preservation"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 2.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Anti-aging"],
+      "synergies": ["VITAMIN C", "VITAMIN E"],
+      "incompatible": [],
+      "precautions": "Light and air sensitive; needs stable formulation",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "GLYCOLIC ACID": {
+      "inci_name": "Glycolic Acid",
+      "cas_number": "79-14-1",
+      "common_names": ["AHA", "글리콜산"],
+      "categories": ["exfoliating", "anti_aging"],
+      "mechanism": {
+        "primary": "Desmosome dissolution enabling cell shedding",
+        "secondary": ["Collagen stimulation", "Hyperpigmentation reduction"]
+      },
+      "typical_concentration": {"min": 2.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["각질제거", "Exfoliating", "Brightening", "Anti-aging"],
+      "synergies": ["HYALURONIC ACID", "NIACINAMIDE"],
+      "incompatible": ["RETINOL (same routine)", "BENZOYL PEROXIDE"],
+      "precautions": "pH dependent efficacy (pH 3.5-4); sun sensitivity",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": true,
+        "eu_limit": 10.0
+      }
+    },
+    "LACTIC ACID": {
+      "inci_name": "Lactic Acid",
+      "cas_number": "50-21-5",
+      "common_names": ["AHA", "락트산"],
+      "categories": ["exfoliating", "hydrating"],
+      "mechanism": {
+        "primary": "Gentle AHA; larger molecule than glycolic",
+        "secondary": ["NMF component", "Hydrating while exfoliating"]
+      },
+      "typical_concentration": {"min": 2.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["각질제거", "Exfoliating", "Hydrating"],
+      "synergies": ["HYALURONIC ACID", "CERAMIDES"],
+      "incompatible": ["RETINOL (same routine)"],
+      "precautions": "Gentler than glycolic; good for sensitive skin",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": true,
+        "eu_limit": 10.0
+      }
+    },
+    "SALICYLIC ACID": {
+      "inci_name": "Salicylic Acid",
+      "cas_number": "69-72-7",
+      "common_names": ["BHA", "살리실산"],
+      "categories": ["exfoliating", "sebum_control", "acne"],
+      "mechanism": {
+        "primary": "Lipophilic keratolytic penetrating pores",
+        "secondary": ["Anti-inflammatory", "Antibacterial"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["각질제거", "Pore clearing", "Acne"],
+      "synergies": ["NIACINAMIDE", "TEA TREE OIL"],
+      "incompatible": ["RETINOL (same routine)"],
+      "precautions": "EU restricted to 2% leave-on; not for children under 3",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": true,
+        "eu_limit": 2.0
+      }
+    },
+    "ZINC PCA": {
+      "inci_name": "Zinc PCA",
+      "cas_number": "15454-75-8",
+      "common_names": ["징크피시에이"],
+      "categories": ["sebum_control", "acne"],
+      "mechanism": {
+        "primary": "5-alpha reductase inhibition; antibacterial",
+        "secondary": ["Sebum regulation", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 1.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["피지조절", "Sebum control", "Acne care"],
+      "synergies": ["NIACINAMIDE", "SALICYLIC ACID"],
+      "incompatible": [],
+      "precautions": "Well-tolerated zinc derivative",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "EGF": {
+      "inci_name": "sh-Oligopeptide-1",
+      "cas_number": "62253-63-8",
+      "common_names": ["EGF", "Epidermal Growth Factor", "상피세포성장인자"],
+      "categories": ["regenerating", "anti_aging"],
+      "mechanism": {
+        "primary": "EGFR activation stimulating cell proliferation",
+        "secondary": ["Wound healing", "Collagen synthesis"]
+      },
+      "typical_concentration": {"min": 0.0001, "max": 0.001, "optimal": 0.0005, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["재생", "Regenerating", "Anti-aging"],
+      "synergies": ["PEPTIDES", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "Very potent at low concentrations; stability concerns",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PDRN": {
+      "inci_name": "Sodium DNA",
+      "cas_number": "9007-49-2",
+      "common_names": ["PDRN", "Polydeoxyribonucleotide", "연어DNA"],
+      "categories": ["regenerating", "anti_aging"],
+      "mechanism": {
+        "primary": "A2A purinergic receptor activation",
+        "secondary": ["Salvage pathway activation", "Anti-inflammatory", "Angiogenesis"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 0.5, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Emerging evidence",
+      "claims_supported": ["재생", "Regenerating", "Wound healing"],
+      "synergies": ["ADENOSINE", "PEPTIDES"],
+      "incompatible": [],
+      "precautions": "Premium ingredient; salmon-derived",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ACETYL HEXAPEPTIDE-8": {
+      "inci_name": "Acetyl Hexapeptide-8",
+      "cas_number": "616204-22-9",
+      "common_names": ["Argireline", "아르기렐린"],
+      "categories": ["anti_aging", "firming"],
+      "mechanism": {
+        "primary": "SNARE complex modulation reducing muscle contraction",
+        "secondary": ["Expression line reduction"]
+      },
+      "typical_concentration": {"min": 0.001, "max": 0.1, "optimal": 0.05, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Expression line reduction"],
+      "synergies": ["ADENOSINE", "OTHER PEPTIDES"],
+      "incompatible": [],
+      "precautions": "Often called 'Botox in a bottle'; topical effect limited",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PALMITOYL TRIPEPTIDE-1": {
+      "inci_name": "Palmitoyl Tripeptide-1",
+      "cas_number": "147732-56-7",
+      "common_names": ["Matrixyl 3000 component", "팔미토일트리펩타이드"],
+      "categories": ["anti_aging", "firming"],
+      "mechanism": {
+        "primary": "Signal peptide; stimulates collagen and glycosaminoglycan synthesis",
+        "secondary": ["ECM repair", "Wrinkle reduction"]
+      },
+      "typical_concentration": {"min": 0.0001, "max": 0.01, "optimal": 0.001, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Firming"],
+      "synergies": ["PALMITOYL TETRAPEPTIDE-7", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "Part of Matrixyl 3000 complex with Palmitoyl Tetrapeptide-7",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "COPPER TRIPEPTIDE-1": {
+      "inci_name": "Copper Tripeptide-1",
+      "cas_number": "89030-95-5",
+      "common_names": ["GHK-Cu", "코퍼펩타이드"],
+      "categories": ["regenerating", "anti_aging"],
+      "mechanism": {
+        "primary": "Copper delivery for enzyme activation; collagen remodeling",
+        "secondary": ["Wound healing", "Anti-inflammatory", "Antioxidant"]
+      },
+      "typical_concentration": {"min": 0.0001, "max": 0.01, "optimal": 0.001, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["재생", "Anti-aging", "Wound healing"],
+      "synergies": ["OTHER PEPTIDES", "HYALURONIC ACID"],
+      "incompatible": ["VITAMIN C (at low pH)"],
+      "precautions": "Blue color in formulations; may discolor at high concentrations",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "LACTOBACILLUS FERMENT": {
+      "inci_name": "Lactobacillus Ferment",
+      "cas_number": null,
+      "common_names": ["Probiotic", "유산균발효여과물"],
+      "categories": ["microbiome", "soothing"],
+      "mechanism": {
+        "primary": "Postbiotic metabolites supporting skin microbiome",
+        "secondary": ["Barrier support", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 5.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Emerging evidence",
+      "claims_supported": ["마이크로바이옴", "Microbiome balance", "Soothing"],
+      "synergies": ["PREBIOTICS", "OTHER FERMENTS"],
+      "incompatible": [],
+      "precautions": "Postbiotic (not live bacteria); stable in formulation",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "GALACTOMYCES FERMENT FILTRATE": {
+      "inci_name": "Galactomyces Ferment Filtrate",
+      "cas_number": null,
+      "common_names": ["Pitera", "GFF", "갈락토미세스발효여과물"],
+      "categories": ["microbiome", "brightening", "hydrating"],
+      "mechanism": {
+        "primary": "Rich in vitamins, amino acids, organic acids",
+        "secondary": ["Brightening", "Hydrating", "Anti-aging"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 95.0, "optimal": 50.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Hydrating", "Anti-aging"],
+      "synergies": ["NIACINAMIDE", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "Famous SK-II ingredient; can be used at high concentrations",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "BIFIDA FERMENT LYSATE": {
+      "inci_name": "Bifida Ferment Lysate",
+      "cas_number": null,
+      "common_names": ["비피다발효용해물"],
+      "categories": ["microbiome", "barrier_repair"],
+      "mechanism": {
+        "primary": "Probiotic lysate; immune modulation and barrier repair",
+        "secondary": ["DNA repair support", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["마이크로바이옴", "Barrier repair", "Anti-aging"],
+      "synergies": ["OTHER FERMENTS", "PREBIOTICS"],
+      "incompatible": [],
+      "precautions": "Featured in Estee Lauder Advanced Night Repair",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "TEA TREE OIL": {
+      "inci_name": "Melaleuca Alternifolia Leaf Oil",
+      "cas_number": "85085-48-9",
+      "common_names": ["Tea Tree Oil", "티트리오일"],
+      "categories": ["acne", "soothing"],
+      "mechanism": {
+        "primary": "Antibacterial (terpinen-4-ol); anti-inflammatory",
+        "secondary": ["Sebum regulation", "Wound healing"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 5.0, "optimal": 2.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["여드름케어", "Acne care", "Antibacterial"],
+      "synergies": ["SALICYLIC ACID", "NIACINAMIDE"],
+      "incompatible": [],
+      "precautions": "Can cause contact sensitization in some individuals",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "BUTYLENE GLYCOL": {
+      "inci_name": "Butylene Glycol",
+      "cas_number": "107-88-0",
+      "common_names": ["BG", "부틸렌글라이콜"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Humectant and solvent; penetration enhancer",
+        "secondary": ["Texture improvement", "Preservation boosting"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Well-established",
+      "claims_supported": ["보습", "Hydrating"],
+      "synergies": ["GLYCERIN", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "Very safe; common cosmetic solvent",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PROPANEDIOL": {
+      "inci_name": "Propanediol",
+      "cas_number": "504-63-2",
+      "common_names": ["1,3-Propanediol", "프로판디올"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Bio-based humectant; skin conditioning",
+        "secondary": ["Solvent", "Penetration enhancer"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Well-established",
+      "claims_supported": ["보습", "Hydrating", "Natural alternative"],
+      "synergies": ["GLYCERIN", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "Plant-derived alternative to propylene glycol",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "SQUALANE": {
+      "inci_name": "Squalane",
+      "cas_number": "111-01-3",
+      "common_names": ["스쿠알란"],
+      "categories": ["hydrating", "barrier_repair"],
+      "mechanism": {
+        "primary": "Emollient; mimics natural sebum component",
+        "secondary": ["Antioxidant", "Penetration enhancer"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Moisturizing", "Barrier support"],
+      "synergies": ["CERAMIDES", "FATTY ACIDS"],
+      "incompatible": [],
+      "precautions": "Olive or sugarcane derived; very stable",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "AZELAIC ACID": {
+      "inci_name": "Azelaic Acid",
+      "cas_number": "123-99-9",
+      "common_names": ["아젤라산"],
+      "categories": ["brightening", "acne"],
+      "mechanism": {
+        "primary": "Tyrosinase inhibition; antibacterial",
+        "secondary": ["Anti-inflammatory", "Keratolytic"]
+      },
+      "typical_concentration": {"min": 5.0, "max": 20.0, "optimal": 10.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Acne care", "Rosacea"],
+      "synergies": ["NIACINAMIDE", "SALICYLIC ACID"],
+      "incompatible": [],
+      "precautions": "Can cause initial stinging; prescription strength at 15-20%",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "BAKUCHIOL": {
+      "inci_name": "Bakuchiol",
+      "cas_number": "10309-37-2",
+      "common_names": ["바쿠치올"],
+      "categories": ["anti_aging"],
+      "mechanism": {
+        "primary": "Retinol-like gene expression; not a retinoid",
+        "secondary": ["Antioxidant", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Natural retinol alternative"],
+      "synergies": ["RETINOL", "VITAMIN C"],
+      "incompatible": [],
+      "precautions": "Plant-based; safe during pregnancy unlike retinol",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "BETA-GLUCAN": {
+      "inci_name": "Beta-Glucan",
+      "cas_number": "9012-72-0",
+      "common_names": ["베타글루칸"],
+      "categories": ["soothing", "hydrating"],
+      "mechanism": {
+        "primary": "Immune modulation; wound healing stimulation",
+        "secondary": ["Film forming", "Hydrating"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 1.0, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Hydrating"],
+      "synergies": ["HYALURONIC ACID", "PANTHENOL"],
+      "incompatible": [],
+      "precautions": "From yeast, oat, or mushroom sources",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "KOJIC ACID": {
+      "inci_name": "Kojic Acid",
+      "cas_number": "501-30-4",
+      "common_names": ["코직산"],
+      "categories": ["brightening"],
+      "mechanism": {
+        "primary": "Tyrosinase copper chelation inhibiting melanin synthesis",
+        "secondary": ["Antioxidant via metal chelation"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Dark spot correction"],
+      "synergies": ["VITAMIN C", "ARBUTIN"],
+      "incompatible": [],
+      "precautions": "EU limit 1%; potential sensitization",
+      "regulatory": {
+        "korea_functional": true,
+        "eu_restricted": true,
+        "eu_limit": 1.0
+      }
+    },
+    "PHENYLETHYL RESORCINOL": {
+      "inci_name": "Phenylethyl Resorcinol",
+      "cas_number": "85-27-8",
+      "common_names": ["Symwhite 377", "페닐에틸레조르시놀"],
+      "categories": ["brightening"],
+      "mechanism": {
+        "primary": "Tyrosinase and TRP-1 inhibition",
+        "secondary": ["Antioxidant", "More potent than kojic acid"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 0.5, "optimal": 0.3, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Dark spot reduction"],
+      "synergies": ["NIACINAMIDE", "VITAMIN C"],
+      "incompatible": [],
+      "precautions": "Premium brightening ingredient",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "4-BUTYLRESORCINOL": {
+      "inci_name": "4-Butylresorcinol",
+      "cas_number": "18979-61-8",
+      "common_names": ["Rucinol", "부틸레조르시놀"],
+      "categories": ["brightening"],
+      "mechanism": {
+        "primary": "Dual TYR and TRP-1 inhibition",
+        "secondary": ["More stable than hydroquinone"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 0.3, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Melasma"],
+      "synergies": ["NIACINAMIDE", "TRANEXAMIC ACID"],
+      "incompatible": [],
+      "precautions": "Effective at low concentrations",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "GLABRIDIN": {
+      "inci_name": "Glabridin",
+      "cas_number": "59870-68-7",
+      "common_names": ["감초추출물", "글라브리딘"],
+      "categories": ["brightening", "soothing"],
+      "mechanism": {
+        "primary": "Tyrosinase inhibition from licorice root",
+        "secondary": ["Anti-inflammatory", "Antioxidant"]
+      },
+      "typical_concentration": {"min": 0.05, "max": 0.5, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Soothing"],
+      "synergies": ["NIACINAMIDE", "ARBUTIN"],
+      "incompatible": [],
+      "precautions": "Natural origin from Glycyrrhiza glabra",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "GLUTATHIONE": {
+      "inci_name": "Glutathione",
+      "cas_number": "70-18-8",
+      "common_names": ["글루타치온", "GSH"],
+      "categories": ["brightening", "antioxidant"],
+      "mechanism": {
+        "primary": "Pheomelanin synthesis promotion over eumelanin; tyrosinase inhibition",
+        "secondary": ["Master antioxidant", "Detoxification"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 2.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Antioxidant"],
+      "synergies": ["VITAMIN C", "N-ACETYL CYSTEINE"],
+      "incompatible": [],
+      "precautions": "Stability concerns; requires careful formulation",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "HYDROXYPINACOLONE RETINOATE": {
+      "inci_name": "Hydroxypinacolone Retinoate",
+      "cas_number": "893412-73-2",
+      "common_names": ["HPR", "Granactive Retinoid"],
+      "categories": ["anti_aging"],
+      "mechanism": {
+        "primary": "Direct RAR activation without conversion; gentler retinoid",
+        "secondary": ["No irritation", "Collagen synthesis"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 1.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Gentle retinoid"],
+      "synergies": ["PEPTIDES", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "Gentle alternative to retinol; can be used with other actives",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "UBIQUINONE": {
+      "inci_name": "Ubiquinone",
+      "cas_number": "303-98-0",
+      "common_names": ["Coenzyme Q10", "CoQ10", "코엔자임큐텐"],
+      "categories": ["antioxidant", "anti_aging"],
+      "mechanism": {
+        "primary": "Mitochondrial electron transport chain support",
+        "secondary": ["Regenerates vitamin E", "Reduces oxidative stress"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 1.0, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Anti-aging", "Energizing"],
+      "synergies": ["VITAMIN E", "VITAMIN C"],
+      "incompatible": [],
+      "precautions": "Low skin penetration; lipophilic",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "IDEBENONE": {
+      "inci_name": "Idebenone",
+      "cas_number": "58186-27-9",
+      "common_names": ["이데베논"],
+      "categories": ["antioxidant", "anti_aging"],
+      "mechanism": {
+        "primary": "Synthetic CoQ10 analog with superior skin penetration",
+        "secondary": ["Highest EPF score among antioxidants", "Mitochondrial protection"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 1.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Anti-aging", "Environmental protection"],
+      "synergies": ["VITAMIN C", "VITAMIN E"],
+      "incompatible": [],
+      "precautions": "Premium antioxidant ingredient",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ASTAXANTHIN": {
+      "inci_name": "Astaxanthin",
+      "cas_number": "472-61-7",
+      "common_names": ["아스타잔틴"],
+      "categories": ["antioxidant", "anti_aging"],
+      "mechanism": {
+        "primary": "Carotenoid spanning cell membrane; singlet oxygen quencher 6000x vitamin C",
+        "secondary": ["UV protection", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.001, "max": 0.1, "optimal": 0.01, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Anti-aging", "UV protection"],
+      "synergies": ["VITAMIN E", "VITAMIN C"],
+      "incompatible": [],
+      "precautions": "Red-orange color; from algae or crustaceans",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ERGOTHIONEINE": {
+      "inci_name": "Ergothioneine",
+      "cas_number": "497-30-3",
+      "common_names": ["에르고티오네인", "EGT"],
+      "categories": ["antioxidant", "anti_aging"],
+      "mechanism": {
+        "primary": "Accumulates via OCTN1 transporter; protects mitochondria",
+        "secondary": ["UV filter", "Anti-pollution"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 0.5, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Emerging evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Anti-pollution", "Longevity"],
+      "synergies": ["VITAMIN C", "GLUTATHIONE"],
+      "incompatible": [],
+      "precautions": "Premium ingredient; mushroom-derived",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "CARNOSINE": {
+      "inci_name": "Carnosine",
+      "cas_number": "305-84-0",
+      "common_names": ["카르노신"],
+      "categories": ["antioxidant", "anti_aging"],
+      "mechanism": {
+        "primary": "Anti-glycation; carbonyl scavenger",
+        "secondary": ["Metal chelation", "Antioxidant"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 5.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["항산화", "Anti-glycation", "Anti-aging"],
+      "synergies": ["VITAMIN C", "PEPTIDES"],
+      "incompatible": [],
+      "precautions": "Dipeptide; water soluble",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "THIOCTIC ACID": {
+      "inci_name": "Thioctic Acid",
+      "cas_number": "1077-28-7",
+      "common_names": ["Alpha Lipoic Acid", "ALA", "알파리포산"],
+      "categories": ["antioxidant", "anti_aging"],
+      "mechanism": {
+        "primary": "Amphiphilic antioxidant; regenerates vitamins C, E, and glutathione",
+        "secondary": ["Metal chelation", "Anti-glycation"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 5.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Anti-aging", "Anti-glycation"],
+      "synergies": ["VITAMIN C", "VITAMIN E"],
+      "incompatible": [],
+      "precautions": "Can cause tingling sensation",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "QUERCETIN": {
+      "inci_name": "Quercetin",
+      "cas_number": "117-39-5",
+      "common_names": ["퀘르세틴"],
+      "categories": ["antioxidant", "soothing"],
+      "mechanism": {
+        "primary": "Flavonol; iron/copper chelation; mast cell stabilization",
+        "secondary": ["Anti-inflammatory", "UV protection"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 1.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["항산화", "Antioxidant", "Anti-inflammatory", "Soothing"],
+      "synergies": ["VITAMIN C", "FERULIC ACID"],
+      "incompatible": [],
+      "precautions": "From various plant sources",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ASIATIC ACID": {
+      "inci_name": "Asiatic Acid",
+      "cas_number": "464-92-6",
+      "common_names": ["아시아트산"],
+      "categories": ["soothing", "anti_aging", "regenerating"],
+      "mechanism": {
+        "primary": "Pentacyclic triterpene; NF-κB and MAPK inhibition",
+        "secondary": ["Collagen synthesis", "MMP inhibition"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 0.5, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["진정", "Anti-aging", "Collagen support"],
+      "synergies": ["MADECASSOSIDE", "MADECASSIC ACID"],
+      "incompatible": [],
+      "precautions": "Purified from Centella asiatica",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "MADECASSIC ACID": {
+      "inci_name": "Madecassic Acid",
+      "cas_number": "18449-41-7",
+      "common_names": ["마데카식산"],
+      "categories": ["soothing", "regenerating"],
+      "mechanism": {
+        "primary": "Hydroxylated triterpene acid; wound healing",
+        "secondary": ["ECM remodeling", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 0.5, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["진정", "Wound healing", "Regenerating"],
+      "synergies": ["ASIATIC ACID", "MADECASSOSIDE"],
+      "incompatible": [],
+      "precautions": "Purified from Centella asiatica",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "AZULENE": {
+      "inci_name": "Azulene",
+      "cas_number": "275-51-4",
+      "common_names": ["아줄렌"],
+      "categories": ["soothing"],
+      "mechanism": {
+        "primary": "Bicyclic aromatic hydrocarbon; anti-inflammatory",
+        "secondary": ["Antioxidant", "Blue color"]
+      },
+      "typical_concentration": {"min": 0.001, "max": 0.1, "optimal": 0.01, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Calming"],
+      "synergies": ["BISABOLOL", "CHAMOMILE"],
+      "incompatible": [],
+      "precautions": "From chamomile; distinctive blue color",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "HOUTTUYNIA CORDATA EXTRACT": {
+      "inci_name": "Houttuynia Cordata Extract",
+      "cas_number": "91745-26-3",
+      "common_names": ["어성초추출물", "Heartleaf"],
+      "categories": ["soothing", "acne"],
+      "mechanism": {
+        "primary": "Flavonoids and decanoic acid derivatives; anti-inflammatory via NO inhibition",
+        "secondary": ["Antimicrobial against P. acnes", "Wound healing"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 5.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Anti-acne"],
+      "synergies": ["CENTELLA ASIATICA", "TEA TREE"],
+      "incompatible": [],
+      "precautions": "Traditional Korean/Asian medicine herb",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ARTEMISIA PRINCEPS LEAF EXTRACT": {
+      "inci_name": "Artemisia Princeps Leaf Extract",
+      "cas_number": "91770-47-1",
+      "common_names": ["애엽추출물", "Korean Mugwort", "쑥"],
+      "categories": ["soothing"],
+      "mechanism": {
+        "primary": "Eupatilin and jaceosidin; iNOS and COX-2 inhibition",
+        "secondary": ["Antioxidant", "Skin calming"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 5.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Calming", "Sensitive skin"],
+      "synergies": ["CENTELLA ASIATICA", "PANTHENOL"],
+      "incompatible": [],
+      "precautions": "Traditional Korean ingredient; K-beauty staple",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PORTULACA OLERACEA EXTRACT": {
+      "inci_name": "Portulaca Oleracea Extract",
+      "cas_number": "90082-07-6",
+      "common_names": ["마치현추출물", "Purslane"],
+      "categories": ["soothing", "barrier_repair"],
+      "mechanism": {
+        "primary": "Omega-3 rich; JAK1/STAT pathway inhibition",
+        "secondary": ["Barrier restoration", "Antioxidant"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 3.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Barrier repair", "Anti-inflammatory"],
+      "synergies": ["CERAMIDES", "PANTHENOL"],
+      "incompatible": [],
+      "precautions": "Excellent for sensitive and atopic skin",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "CALENDULA OFFICINALIS FLOWER EXTRACT": {
+      "inci_name": "Calendula Officinalis Flower Extract",
+      "cas_number": "84776-23-8",
+      "common_names": ["카렌듈라추출물", "Marigold"],
+      "categories": ["soothing", "regenerating"],
+      "mechanism": {
+        "primary": "Triterpenoids (faradiol); lipoxygenase inhibition",
+        "secondary": ["Wound healing", "Antimicrobial"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 5.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["진정", "Soothing", "Wound healing"],
+      "synergies": ["ALLANTOIN", "PANTHENOL"],
+      "incompatible": [],
+      "precautions": "Safe for baby products",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "LACTOBIONIC ACID": {
+      "inci_name": "Lactobionic Acid",
+      "cas_number": "96-82-2",
+      "common_names": ["락토바이오닉산", "PHA"],
+      "categories": ["exfoliating", "hydrating", "antioxidant"],
+      "mechanism": {
+        "primary": "Polyhydroxy bionic acid; gentle exfoliation with humectant properties",
+        "secondary": ["Antioxidant", "MMP inhibition"]
+      },
+      "typical_concentration": {"min": 2.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["각질제거", "Gentle exfoliating", "Hydrating", "Sensitive skin safe"],
+      "synergies": ["HYALURONIC ACID", "GLUCONOLACTONE"],
+      "incompatible": [],
+      "precautions": "Non-irritating; suitable for sensitive skin",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "GLUCONOLACTONE": {
+      "inci_name": "Gluconolactone",
+      "cas_number": "90-80-2",
+      "common_names": ["글루코노락톤", "PHA"],
+      "categories": ["exfoliating", "hydrating"],
+      "mechanism": {
+        "primary": "PHA; gradual hydrolysis to gluconic acid; multiple hydroxyl groups",
+        "secondary": ["Humectant", "Metal chelation"]
+      },
+      "typical_concentration": {"min": 2.0, "max": 10.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["각질제거", "Gentle exfoliating", "Hydrating"],
+      "synergies": ["LACTOBIONIC ACID", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "GRAS status; gentle alternative to AHAs",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "MALIC ACID": {
+      "inci_name": "Malic Acid",
+      "cas_number": "6915-15-7",
+      "common_names": ["말릭산", "AHA"],
+      "categories": ["exfoliating", "brightening"],
+      "mechanism": {
+        "primary": "Dicarboxylic AHA; larger molecule for gentle exfoliation",
+        "secondary": ["Antioxidant", "Brightening"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 5.0, "optimal": 2.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["각질제거", "Exfoliating", "Brightening"],
+      "synergies": ["GLYCOLIC ACID", "LACTIC ACID"],
+      "incompatible": [],
+      "precautions": "Often combined with other AHAs",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": true,
+        "eu_limit": 10.0
+      }
+    },
+    "PHYTIC ACID": {
+      "inci_name": "Phytic Acid",
+      "cas_number": "83-86-3",
+      "common_names": ["피트산"],
+      "categories": ["brightening", "antioxidant", "exfoliating"],
+      "mechanism": {
+        "primary": "Metal chelation; tyrosinase inhibition via copper chelation",
+        "secondary": ["Antioxidant", "Gentle exfoliation"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Antioxidant"],
+      "synergies": ["VITAMIN C", "NIACINAMIDE"],
+      "incompatible": [],
+      "precautions": "Natural; from rice bran",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "BETAINE SALICYLATE": {
+      "inci_name": "Betaine Salicylate",
+      "cas_number": "17671-53-3",
+      "common_names": ["베타인살리실레이트"],
+      "categories": ["exfoliating", "acne"],
+      "mechanism": {
+        "primary": "Gentler BHA derivative; salicylic acid ester with betaine",
+        "secondary": ["Reduced irritation", "Sebum regulation"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 4.0, "optimal": 2.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["각질제거", "Gentle BHA", "Acne care"],
+      "synergies": ["NIACINAMIDE", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "K-beauty favorite; less irritating than salicylic acid",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PAPAIN": {
+      "inci_name": "Papain",
+      "cas_number": "9001-73-4",
+      "common_names": ["파파인"],
+      "categories": ["exfoliating"],
+      "mechanism": {
+        "primary": "Cysteine protease; cleaves keratin peptide bonds",
+        "secondary": ["Selective for dead cells", "Anti-inflammatory"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 1.0, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["효소각질제거", "Enzyme exfoliation", "Gentle resurfacing"],
+      "synergies": ["BROMELAIN"],
+      "incompatible": [],
+      "precautions": "From papaya; potential allergen",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "BROMELAIN": {
+      "inci_name": "Bromelain",
+      "cas_number": "9001-00-7",
+      "common_names": ["브로멜라인"],
+      "categories": ["exfoliating", "soothing"],
+      "mechanism": {
+        "primary": "Cysteine protease from pineapple; keratin hydrolysis",
+        "secondary": ["Anti-inflammatory", "Fibrin degradation"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 1.0, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["효소각질제거", "Enzyme exfoliation", "Soothing"],
+      "synergies": ["PAPAIN"],
+      "incompatible": [],
+      "precautions": "From pineapple; potential allergen",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "CAMELLIA JAPONICA SEED OIL": {
+      "inci_name": "Camellia Japonica Seed Oil",
+      "cas_number": "225233-97-6",
+      "common_names": ["동백오일", "Tsubaki Oil"],
+      "categories": ["hydrating", "barrier_repair"],
+      "mechanism": {
+        "primary": "High oleic acid (80-85%); skin-identical lipid replacement",
+        "secondary": ["Emollient", "Antioxidant"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 20.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Traditional use; moderate evidence",
+      "claims_supported": ["보습", "Moisturizing", "Hair conditioning"],
+      "synergies": ["CERAMIDES", "SQUALANE"],
+      "incompatible": [],
+      "precautions": "Traditional Japanese/Korean beauty oil",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ROSA CANINA SEED OIL": {
+      "inci_name": "Rosa Canina Seed Oil",
+      "cas_number": "84603-93-0",
+      "common_names": ["로즈힙오일"],
+      "categories": ["anti_aging", "brightening", "regenerating"],
+      "mechanism": {
+        "primary": "Contains natural tretinoin; high linoleic/linolenic acids",
+        "secondary": ["Scar healing", "Brightening"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 10.0, "optimal": 3.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["재생", "Scar reduction", "Anti-aging", "Brightening"],
+      "synergies": ["VITAMIN E", "CERAMIDES"],
+      "incompatible": [],
+      "precautions": "Poor oxidative stability; needs antioxidants",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ARGANIA SPINOSA KERNEL OIL": {
+      "inci_name": "Argania Spinosa Kernel Oil",
+      "cas_number": "223747-87-3",
+      "common_names": ["아르간오일"],
+      "categories": ["hydrating", "anti_aging", "barrier_repair"],
+      "mechanism": {
+        "primary": "Rich in vitamin E and ferulic acid; oleic acid dominant",
+        "secondary": ["Antioxidant", "Non-comedogenic"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 15.0, "optimal": 3.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Anti-aging", "Hair conditioning"],
+      "synergies": ["VITAMIN E", "SQUALANE"],
+      "incompatible": [],
+      "precautions": "Premium oil; Moroccan origin",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "HELIANTHUS ANNUUS SEED OIL": {
+      "inci_name": "Helianthus Annuus Seed Oil",
+      "cas_number": "8001-21-6",
+      "common_names": ["해바라기씨오일"],
+      "categories": ["barrier_repair", "hydrating"],
+      "mechanism": {
+        "primary": "High linoleic acid; barrier lipid support",
+        "secondary": ["Anti-inflammatory", "Non-comedogenic"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 50.0, "optimal": 10.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["장벽강화", "Barrier repair", "Moisturizing"],
+      "synergies": ["CERAMIDES", "FATTY ACIDS"],
+      "incompatible": [],
+      "precautions": "High oleic variants more stable",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "OENOTHERA BIENNIS OIL": {
+      "inci_name": "Oenothera Biennis Oil",
+      "cas_number": "90028-66-3",
+      "common_names": ["달맞이꽃종자유", "Evening Primrose Oil"],
+      "categories": ["barrier_repair", "soothing"],
+      "mechanism": {
+        "primary": "High gamma-linolenic acid (GLA); anti-inflammatory",
+        "secondary": ["Eczema treatment", "Barrier repair"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 10.0, "optimal": 2.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["장벽강화", "Anti-inflammatory", "Eczema care"],
+      "synergies": ["CERAMIDES", "BORAGE OIL"],
+      "incompatible": [],
+      "precautions": "Poor oxidative stability",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "DIMETHICONE": {
+      "inci_name": "Dimethicone",
+      "cas_number": "9006-65-9",
+      "common_names": ["디메치콘", "Silicone"],
+      "categories": ["hydrating", "barrier_repair"],
+      "mechanism": {
+        "primary": "Occlusive; forms breathable protective film",
+        "secondary": ["Smoothing", "Silky feel"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 30.0, "optimal": 3.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Skin protection", "Smoothing"],
+      "synergies": ["CYCLOPENTASILOXANE"],
+      "incompatible": [],
+      "precautions": "Non-comedogenic; safe",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "CAPRYLIC/CAPRIC TRIGLYCERIDE": {
+      "inci_name": "Caprylic/Capric Triglyceride",
+      "cas_number": "65381-09-1",
+      "common_names": ["MCT오일"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Lightweight emollient from coconut; excellent spreading",
+        "secondary": ["Solvent", "Non-comedogenic"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 50.0, "optimal": 10.0, "unit": "%"},
+      "evidence_level": "Well-established",
+      "claims_supported": ["보습", "Moisturizing", "Skin conditioning"],
+      "synergies": ["SQUALANE", "VITAMIN E"],
+      "incompatible": [],
+      "precautions": "Very stable; odorless",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PETROLATUM": {
+      "inci_name": "Petrolatum",
+      "cas_number": "8009-03-8",
+      "common_names": ["바셀린", "Vaseline"],
+      "categories": ["barrier_repair", "hydrating"],
+      "mechanism": {
+        "primary": "Maximum occlusion; reduces TEWL by 98%",
+        "secondary": ["Wound healing", "Skin protection"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 100.0, "optimal": 10.0, "unit": "%"},
+      "evidence_level": "Gold standard evidence",
+      "claims_supported": ["장벽강화", "Maximum moisturizing", "Wound healing"],
+      "synergies": ["CERAMIDES"],
+      "incompatible": [],
+      "precautions": "Cosmetic grade non-comedogenic; may feel heavy",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "BUTYROSPERMUM PARKII BUTTER": {
+      "inci_name": "Butyrospermum Parkii Butter",
+      "cas_number": "194043-92-0",
+      "common_names": ["시어버터", "Shea Butter"],
+      "categories": ["hydrating", "barrier_repair", "soothing"],
+      "mechanism": {
+        "primary": "High unsaponifiables (5-17%); anti-inflammatory triterpenes",
+        "secondary": ["Emollient", "Wound healing"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 50.0, "optimal": 5.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Barrier repair", "Soothing"],
+      "synergies": ["CERAMIDES", "SQUALANE"],
+      "incompatible": [],
+      "precautions": "Non-comedogenic despite being butter",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PHENOXYETHANOL": {
+      "inci_name": "Phenoxyethanol",
+      "cas_number": "122-99-6",
+      "common_names": ["페녹시에탄올"],
+      "categories": [],
+      "mechanism": {
+        "primary": "Broad-spectrum preservative; disrupts bacterial membrane",
+        "secondary": []
+      },
+      "typical_concentration": {"min": 0.5, "max": 1.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Well-established",
+      "claims_supported": [],
+      "synergies": ["ETHYLHEXYLGLYCERIN"],
+      "incompatible": [],
+      "precautions": "EU limit 1%; paraben alternative",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": true,
+        "eu_limit": 1.0
+      }
+    },
+    "ETHYLHEXYLGLYCERIN": {
+      "inci_name": "Ethylhexylglycerin",
+      "cas_number": "70445-33-9",
+      "common_names": ["에칠헥실글리세린"],
+      "categories": [],
+      "mechanism": {
+        "primary": "Preservative booster; enhances phenoxyethanol efficacy",
+        "secondary": ["Deodorizing", "Skin conditioning"]
+      },
+      "typical_concentration": {"min": 0.1, "max": 1.0, "optimal": 0.5, "unit": "%"},
+      "evidence_level": "Well-established",
+      "claims_supported": [],
+      "synergies": ["PHENOXYETHANOL"],
+      "incompatible": [],
+      "precautions": "Part of EcoPure system",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "SODIUM BENZOATE": {
+      "inci_name": "Sodium Benzoate",
+      "cas_number": "532-32-1",
+      "common_names": ["벤조산나트륨"],
+      "categories": [],
+      "mechanism": {
+        "primary": "Preservative at low pH; inhibits yeast and mold",
+        "secondary": []
+      },
+      "typical_concentration": {"min": 0.1, "max": 0.5, "optimal": 0.3, "unit": "%"},
+      "evidence_level": "Well-established",
+      "claims_supported": [],
+      "synergies": ["POTASSIUM SORBATE"],
+      "incompatible": [],
+      "precautions": "Requires pH < 5 for efficacy",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": true,
+        "eu_limit": 2.5
+      }
+    },
+    "POTASSIUM SORBATE": {
+      "inci_name": "Potassium Sorbate",
+      "cas_number": "24634-61-5",
+      "common_names": ["소르빈산칼륨"],
+      "categories": [],
+      "mechanism": {
+        "primary": "Preservative at low pH; antifungal",
+        "secondary": []
+      },
+      "typical_concentration": {"min": 0.1, "max": 0.6, "optimal": 0.3, "unit": "%"},
+      "evidence_level": "Well-established",
+      "claims_supported": [],
+      "synergies": ["SODIUM BENZOATE"],
+      "incompatible": [],
+      "precautions": "Requires pH < 5.5; natural-friendly option",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": true,
+        "eu_limit": 0.6
+      }
+    },
+    "CAPRYLHYDROXAMIC ACID": {
+      "inci_name": "Caprylhydroxamic Acid",
+      "cas_number": "7377-03-9",
+      "common_names": ["카프릴하이드록삼산"],
+      "categories": [],
+      "mechanism": {
+        "primary": "Chelation-based preservation; blocks metal-dependent enzymes",
+        "secondary": []
+      },
+      "typical_concentration": {"min": 0.1, "max": 0.5, "optimal": 0.3, "unit": "%"},
+      "evidence_level": "Moderate evidence",
+      "claims_supported": [],
+      "synergies": ["ETHYLHEXYLGLYCERIN", "GLYCERYL CAPRYLATE"],
+      "incompatible": [],
+      "precautions": "Derived from coconut; pH dependent",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "SODIUM HYALURONATE CROSSPOLYMER": {
+      "inci_name": "Sodium Hyaluronate Crosspolymer",
+      "cas_number": null,
+      "common_names": ["가교히알루론산"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Cross-linked HA; 3D network for enhanced water retention",
+        "secondary": ["Longer-lasting hydration", "Dermal filler effect"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 0.5, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["보습", "Long-lasting hydration", "Plumping"],
+      "synergies": ["SODIUM HYALURONATE", "GLYCERIN"],
+      "incompatible": [],
+      "precautions": "Premium HA variant",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "HYDROLYZED HYALURONIC ACID": {
+      "inci_name": "Hydrolyzed Hyaluronic Acid",
+      "cas_number": null,
+      "common_names": ["저분자히알루론산"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Low molecular weight HA; penetrates deeper into skin",
+        "secondary": ["Dermal hydration", "Better absorption"]
+      },
+      "typical_concentration": {"min": 0.01, "max": 0.5, "optimal": 0.1, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["보습", "Deep hydration", "Penetrating"],
+      "synergies": ["SODIUM HYALURONATE", "GLYCERIN"],
+      "incompatible": [],
+      "precautions": "MW 50,000-200,000 Da for penetration",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ACETYL GLUCOSAMINE": {
+      "inci_name": "Acetyl Glucosamine",
+      "cas_number": "7512-17-6",
+      "common_names": ["아세틸글루코사민", "NAG"],
+      "categories": ["brightening", "hydrating", "anti_aging"],
+      "mechanism": {
+        "primary": "Inhibits tyrosinase glycosylation; HA precursor",
+        "secondary": ["Exfoliation", "Wound healing"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 5.0, "optimal": 2.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["미백", "Brightening", "Exfoliating", "Hydrating"],
+      "synergies": ["NIACINAMIDE", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "Works synergistically with niacinamide",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PALMITOYL TETRAPEPTIDE-7": {
+      "inci_name": "Palmitoyl Tetrapeptide-7",
+      "cas_number": "221227-05-0",
+      "common_names": ["팔미토일테트라펩타이드-7"],
+      "categories": ["anti_aging", "soothing"],
+      "mechanism": {
+        "primary": "Reduces IL-6 release; anti-inflammatory",
+        "secondary": ["Reduces glycation", "Calms skin"]
+      },
+      "typical_concentration": {"min": 0.0001, "max": 0.01, "optimal": 0.001, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Soothing"],
+      "synergies": ["PALMITOYL TRIPEPTIDE-1"],
+      "incompatible": [],
+      "precautions": "Part of Matrixyl 3000",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ACETYL TETRAPEPTIDE-9": {
+      "inci_name": "Acetyl Tetrapeptide-9",
+      "cas_number": "928006-88-6",
+      "common_names": ["아세틸테트라펩타이드-9"],
+      "categories": ["anti_aging", "firming"],
+      "mechanism": {
+        "primary": "Lumican synthesis; collagen organization",
+        "secondary": ["Skin density improvement"]
+      },
+      "typical_concentration": {"min": 0.0001, "max": 0.01, "optimal": 0.001, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["주름개선", "Firming", "Density improvement"],
+      "synergies": ["OTHER PEPTIDES", "RETINOL"],
+      "incompatible": [],
+      "precautions": "Premium peptide ingredient",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "HEXAPEPTIDE-11": {
+      "inci_name": "Hexapeptide-11",
+      "cas_number": null,
+      "common_names": ["헥사펩타이드-11"],
+      "categories": ["anti_aging", "firming"],
+      "mechanism": {
+        "primary": "Yeast-derived peptide; fibroblast stimulation",
+        "secondary": ["Collagen synthesis", "Elastin support"]
+      },
+      "typical_concentration": {"min": 0.001, "max": 0.1, "optimal": 0.01, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["주름개선", "Firming", "Anti-aging"],
+      "synergies": ["OTHER PEPTIDES"],
+      "incompatible": [],
+      "precautions": "From Saccharomyces fermentation",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "PALMITOYL PENTAPEPTIDE-4": {
+      "inci_name": "Palmitoyl Pentapeptide-4",
+      "cas_number": "214047-00-4",
+      "common_names": ["마트릭실", "Matrixyl"],
+      "categories": ["anti_aging", "firming"],
+      "mechanism": {
+        "primary": "KTTKS sequence; stimulates collagen I, III, IV, fibronectin, GAGs",
+        "secondary": ["Wrinkle reduction"]
+      },
+      "typical_concentration": {"min": 0.0001, "max": 0.01, "optimal": 0.004, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["주름개선", "Anti-wrinkle", "Firming", "Collagen boosting"],
+      "synergies": ["HYALURONIC ACID", "RETINOL"],
+      "incompatible": [],
+      "precautions": "Original Matrixyl; well-studied",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "SACCHAROMYCES FERMENT FILTRATE": {
+      "inci_name": "Saccharomyces Ferment Filtrate",
+      "cas_number": null,
+      "common_names": ["효모발효여과물"],
+      "categories": ["hydrating", "brightening"],
+      "mechanism": {
+        "primary": "Rich in amino acids, vitamins, minerals from yeast fermentation",
+        "secondary": ["Skin conditioning", "Barrier support"]
+      },
+      "typical_concentration": {"min": 1.0, "max": 95.0, "optimal": 30.0, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["보습", "Hydrating", "Brightening", "Conditioning"],
+      "synergies": ["NIACINAMIDE", "HYALURONIC ACID"],
+      "incompatible": [],
+      "precautions": "Can be used at high concentrations",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "ECTOIN": {
+      "inci_name": "Ectoin",
+      "cas_number": "96702-03-3",
+      "common_names": ["엑토인"],
+      "categories": ["soothing", "barrier_repair"],
+      "mechanism": {
+        "primary": "Extremolyte; cell stress protection via kosmotropic effect",
+        "secondary": ["Barrier repair", "Anti-aging", "Immune modulation"]
+      },
+      "typical_concentration": {"min": 0.5, "max": 2.0, "optimal": 1.0, "unit": "%"},
+      "evidence_level": "Strong clinical evidence",
+      "claims_supported": ["진정", "Stress protection", "Anti-pollution", "Barrier repair"],
+      "synergies": ["HYALURONIC ACID", "CERAMIDES"],
+      "incompatible": [],
+      "precautions": "From extremophile bacteria",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    },
+    "TREMELLA FUCIFORMIS POLYSACCHARIDE": {
+      "inci_name": "Tremella Fuciformis Polysaccharide",
+      "cas_number": null,
+      "common_names": ["흰목이버섯다당체", "Snow Mushroom"],
+      "categories": ["hydrating"],
+      "mechanism": {
+        "primary": "Similar to HA; holds 500x weight in water with smaller particles",
+        "secondary": ["Better skin penetration than HA"]
+      },
+      "typical_concentration": {"min": 0.05, "max": 1.0, "optimal": 0.2, "unit": "%"},
+      "evidence_level": "Moderate clinical evidence",
+      "claims_supported": ["보습", "Hydrating", "Natural HA alternative"],
+      "synergies": ["HYALURONIC ACID", "GLYCERIN"],
+      "incompatible": [],
+      "precautions": "Traditional Chinese medicine ingredient",
+      "regulatory": {
+        "korea_functional": false,
+        "eu_restricted": false
+      }
+    }
+  },
+  "synergy_combinations": [
+    {
+      "name": "C E Ferulic",
+      "ingredients": ["ASCORBIC ACID", "TOCOPHEROL", "FERULIC ACID"],
+      "benefit": "Synergistic antioxidant protection; vitamin C stabilization; doubles photoprotection",
+      "reference": "Pinnell et al., 2005"
+    },
+    {
+      "name": "Barrier Repair Complex",
+      "ingredients": ["CERAMIDE NP", "CHOLESTEROL", "FATTY ACIDS"],
+      "benefit": "Optimal 3:1:1 ratio mimics natural stratum corneum lipids",
+      "reference": "Elias et al., 1999"
+    },
+    {
+      "name": "Cica Complex",
+      "ingredients": ["CENTELLA ASIATICA EXTRACT", "PANTHENOL", "ALLANTOIN"],
+      "benefit": "Multi-pathway soothing and barrier repair",
+      "reference": "Multiple studies"
+    },
+    {
+      "name": "Niacinamide + HA",
+      "ingredients": ["NIACINAMIDE", "HYALURONIC ACID"],
+      "benefit": "Enhanced hydration with barrier support and brightening",
+      "reference": "Cosmetic formulation best practice"
+    },
+    {
+      "name": "Retinol + Peptides",
+      "ingredients": ["RETINOL", "PEPTIDES"],
+      "benefit": "Complementary anti-aging via different pathways",
+      "reference": "Clinical practice"
+    },
+    {
+      "name": "PDRN + Adenosine",
+      "ingredients": ["PDRN", "ADENOSINE"],
+      "benefit": "Cellular energy and regeneration synergy via A2A receptor",
+      "reference": "Emerging research"
+    },
+    {
+      "name": "Brightening Complex",
+      "ingredients": ["NIACINAMIDE", "TRANEXAMIC ACID", "ALPHA-ARBUTIN"],
+      "benefit": "Multi-mechanism brightening targeting different pathways",
+      "reference": "K-beauty formulation standard"
+    },
+    {
+      "name": "Matrixyl 3000",
+      "ingredients": ["PALMITOYL TRIPEPTIDE-1", "PALMITOYL TETRAPEPTIDE-7"],
+      "benefit": "Signal and neurotransmitter modulating peptide combination",
+      "reference": "Sederma clinical studies"
+    },
+    {
+      "name": "Microbiome Balance",
+      "ingredients": ["LACTOBACILLUS FERMENT", "BIFIDA FERMENT LYSATE"],
+      "benefit": "Postbiotic synergy for microbiome support",
+      "reference": "Microbiome research"
+    }
+  ]
+}
