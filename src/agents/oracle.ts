@@ -18,6 +18,11 @@ export const ORACLE_PROMPT_METADATA: AgentPromptMetadata = {
     { domain: 'Architecture decisions', trigger: 'Multi-system tradeoffs, unfamiliar patterns' },
     { domain: 'Self-review', trigger: 'After completing significant implementation' },
     { domain: 'Hard debugging', trigger: 'After 2+ failed fix attempts' },
+    // Cosmetic domain triggers
+    { domain: 'Cosmetic R&D', trigger: 'Complex formulation analysis, multi-ingredient interactions' },
+    { domain: 'Formulation', trigger: 'HLB calculation, pH optimization, emulsion design (delegate to formulation-oracle)' },
+    { domain: 'Safety', trigger: 'MoS calculation, NOAEL analysis, toxicity evaluation (delegate to safety-oracle)' },
+    { domain: 'Regulatory', trigger: 'CPSR, CosIng, FDA, NMPA compliance (delegate to regulatory-oracle)' },
   ],
   useWhen: [
     'Complex architecture design',
@@ -26,6 +31,9 @@ export const ORACLE_PROMPT_METADATA: AgentPromptMetadata = {
     'Unfamiliar code patterns',
     'Security/performance concerns',
     'Multi-system tradeoffs',
+    // Cosmetic use cases
+    'Complex multi-ingredient formulation issues',
+    'Cross-domain cosmetic analysis (formulation + safety + regulatory)',
   ],
   avoidWhen: [
     'Simple file operations (use direct tools)',
@@ -33,6 +41,11 @@ export const ORACLE_PROMPT_METADATA: AgentPromptMetadata = {
     'Questions answerable from code you\'ve read',
     'Trivial decisions (variable names, formatting)',
     'Things you can infer from existing code patterns',
+    // Cosmetic-specific delegation
+    'Simple formulation queries (use formulation-oracle)',
+    'Standard safety checks (use safety-oracle)',
+    'Basic regulatory questions (use regulatory-oracle)',
+    'Ingredient lookups (use ingredient-explorer or cosmetic-librarian)',
   ],
 };
 
@@ -183,7 +196,35 @@ FAIL_IF: [conditions indicating the fix didn't work]
 \`\`\`
 
 This creates a **diagnosis → fix → verify** loop with qa-tester as the verification arm.
-</QA_Tester_Handoff>`;
+</QA_Tester_Handoff>
+
+<Cosmetic_Domain_Routing>
+## Cosmetic R&D Specialist Delegation
+
+For cosmetic-specific queries, DELEGATE to the appropriate specialist oracle:
+
+| Query Type | Delegate To | Skills Available |
+|------------|-------------|------------------|
+| Formulation/HLB/pH/Emulsion | **formulation-oracle** | formulation-calculator, stability-predictor, ingredient-compatibility |
+| Safety/EWG/CIR/MoS/Toxicity | **safety-oracle** | ewg-skindeep, cir-safety, irritation-predictor, cpsr-generator |
+| Regulatory/CPSR/CosIng/FDA | **regulatory-oracle** | regulatory-compliance, regulatory-checker, cpsr-generator |
+| Ingredient DB Search | **cosmetic-librarian** | cosing-database, kfda-ingredient, pubmed-search |
+| Quick INCI/CAS Lookup | **ingredient-explorer** | incidecoder-analysis, cosdna-analysis |
+| Report/Document Generation | **cosmetic-junior** | batch-calculator, inci-converter |
+
+### When to Handle Yourself vs Delegate
+
+**Handle Yourself (Multi-domain Analysis)**:
+- Complex interactions across formulation + safety + regulatory
+- Novel formulation challenges requiring deep analysis
+- Troubleshooting failed batch with unknown cause
+
+**Delegate (Single-domain Queries)**:
+- "Calculate HLB for this emulsifier blend" → formulation-oracle
+- "Check EWG rating for Niacinamide" → safety-oracle
+- "Is this formulation EU compliant?" → regulatory-oracle
+- "Find CAS number for Retinol" → ingredient-explorer
+</Cosmetic_Domain_Routing>`;
 
 export const oracleAgent: AgentConfig = {
   name: 'oracle',

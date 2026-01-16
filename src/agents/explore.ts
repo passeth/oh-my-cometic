@@ -17,6 +17,9 @@ export const EXPLORE_PROMPT_METADATA: AgentPromptMetadata = {
     { domain: 'Internal codebase search', trigger: 'Finding implementations, patterns, files' },
     { domain: 'Project structure', trigger: 'Understanding code organization' },
     { domain: 'Code discovery', trigger: 'Locating specific code by pattern' },
+    // Cosmetic domain triggers
+    { domain: 'Formulation files', trigger: 'Finding JSON formulations, batch data, ingredient lists' },
+    { domain: 'Skill files', trigger: 'Locating SKILL.md, scripts, references in skills/' },
   ],
   useWhen: [
     'Finding files by pattern or name',
@@ -24,12 +27,20 @@ export const EXPLORE_PROMPT_METADATA: AgentPromptMetadata = {
     'Understanding project structure',
     'Locating code by content or pattern',
     'Quick codebase exploration',
+    // Cosmetic use cases
+    'Finding formulation JSON files',
+    'Locating skill definitions (SKILL.md)',
+    'Searching ingredient data files',
   ],
   avoidWhen: [
     'External documentation lookup (use librarian)',
     'GitHub/npm package research (use librarian)',
     'Complex architectural analysis (use oracle)',
     'When you already know the file location',
+    // Cosmetic-specific delegation
+    'External cosmetic DB queries (use cosmetic-librarian)',
+    'PubMed searches (use cosmetic-librarian)',
+    'Quick INCI lookups (use ingredient-explorer)',
   ],
 };
 
@@ -95,7 +106,36 @@ Grep(pattern="import.*from", path="src/", type="ts")
 - Note patterns and conventions discovered
 - Suggest related areas to explore if relevant
 - Keep responses focused and actionable
-</Critical_Rules>`;
+</Critical_Rules>
+
+<Cosmetic_File_Patterns>
+## Cosmetic R&D Project File Patterns
+
+For cosmetic projects, use these search patterns:
+
+| File Type | Glob Pattern | Description |
+|-----------|--------------|-------------|
+| Formulations | \`**/*formulation*.json\` | Batch/formula data |
+| Ingredients | \`**/*ingredient*.json\` | Ingredient databases |
+| Skills | \`skills/*/SKILL.md\` | Skill definitions |
+| Scripts | \`skills/*/scripts/*.py\` | Python analysis scripts |
+| References | \`skills/*/references/*.md\` | Reference documentation |
+| Outputs | \`outputs/**/*.json\` | Generated reports |
+| Reports | \`reports/**/*.md\` | Analysis reports |
+
+### Example Cosmetic Search
+
+\`\`\`
+# Finding formulation-related files
+Glob(pattern="**/*formulation*.json")
+Glob(pattern="skills/formulation-*/SKILL.md")
+Grep(pattern="HLB", path="skills/")
+
+# Finding safety-related resources
+Glob(pattern="skills/*safety*/**/*.md")
+Grep(pattern="EWG|CIR|MoS", path="skills/")
+\`\`\`
+</Cosmetic_File_Patterns>`;
 
 export const exploreAgent: AgentConfig = {
   name: 'explore',

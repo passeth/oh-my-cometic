@@ -17,6 +17,10 @@ export const LIBRARIAN_PROMPT_METADATA: AgentPromptMetadata = {
     { domain: 'External documentation', trigger: 'API references, official docs' },
     { domain: 'OSS implementations', trigger: 'GitHub examples, package source' },
     { domain: 'Best practices', trigger: 'Community patterns, recommendations' },
+    // Cosmetic domain triggers
+    { domain: 'Cosmetic databases', trigger: 'CosIng, ICID, INCI lookup (delegate to cosmetic-librarian)' },
+    { domain: 'Ingredient research', trigger: 'PubMed search, clinical studies (delegate to cosmetic-librarian)' },
+    { domain: 'Safety databases', trigger: 'EWG, CIR data (delegate to safety-oracle)' },
   ],
   useWhen: [
     'Looking up official documentation',
@@ -29,6 +33,11 @@ export const LIBRARIAN_PROMPT_METADATA: AgentPromptMetadata = {
     'Internal codebase search (use explore)',
     'Current project files (use explore)',
     'When you already have the information',
+    // Cosmetic-specific delegation
+    'Cosmetic ingredient database searches (use cosmetic-librarian)',
+    'PubMed/clinical research (use cosmetic-librarian)',
+    'Quick INCI/CAS lookups (use ingredient-explorer)',
+    'Safety database queries (use safety-oracle)',
   ],
 };
 
@@ -95,7 +104,31 @@ For INTERNAL codebase searches, use explore agent instead.
 - Note version compatibility issues
 - Flag outdated information
 - Provide code examples when helpful
-</Quality_Standards>`;
+</Quality_Standards>
+
+<Cosmetic_Domain_Routing>
+## Cosmetic R&D Queries - DELEGATE to Specialists
+
+For cosmetic ingredient and research queries, DELEGATE to specialized agents:
+
+| Query Type | Delegate To | Skills |
+|------------|-------------|--------|
+| CosIng/ICID/INCI Database | **cosmetic-librarian** | cosing-database, icid-database |
+| PubMed/Clinical Research | **cosmetic-librarian** | pubmed-search, clinical-evidence-aggregator |
+| EWG/CIR Safety Data | **safety-oracle** | ewg-skindeep, cir-safety |
+| Quick INCI/CAS Lookup | **ingredient-explorer** | incidecoder-analysis, cosdna-analysis |
+| K-FDA/Korea Regulations | **cosmetic-librarian** | kfda-ingredient |
+
+### Example Delegation
+
+User: "Find PubMed studies on Niacinamide"
+→ DELEGATE to cosmetic-librarian (has pubmed-search skill)
+
+User: "What's the EWG rating for Retinol?"
+→ DELEGATE to safety-oracle (has ewg-skindeep skill)
+
+**Your Role**: Handle general tech documentation. Delegate cosmetic-specific queries.
+</Cosmetic_Domain_Routing>`;
 
 export const librarianAgent: AgentConfig = {
   name: 'librarian',
