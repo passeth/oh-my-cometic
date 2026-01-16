@@ -1,781 +1,360 @@
 <div align="center">
 
-![oh-my-claude-sisyphus](https://raw.githubusercontent.com/Yeachan-Heo/oh-my-claude-sisyphus-website/main/social-preview.png)
+# Oh-My-Cosmetic
 
-# 🚀 v2.5.0 - Claude Code Native Multi-Agent Orchestration
+### 화장품 R&D 멀티에이전트 시스템
 
-[![Version](https://img.shields.io/badge/version-2.5.0-ff6b6b)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus/releases)
-[![npm version](https://img.shields.io/npm/v/oh-my-claude-sisyphus?color=cb3837)](https://www.npmjs.com/package/oh-my-claude-sisyphus)
-[![Downloads](https://img.shields.io/npm/dt/oh-my-claude-sisyphus?color=00d4aa)](https://www.npmjs.com/package/oh-my-claude-sisyphus)
-[![GitHub stars](https://img.shields.io/github/stars/Yeachan-Heo/oh-my-claude-sisyphus?style=flat&color=ffd700)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Yeachan-Heo/oh-my-claude-sisyphus?style=flat&color=00bfff)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/Yeachan-Heo/oh-my-claude-sisyphus?color=ff9800)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus/issues)
-[![GitHub last commit](https://img.shields.io/github/last-commit/Yeachan-Heo/oh-my-claude-sisyphus?color=9c27b0)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus/commits)
+[![Version](https://img.shields.io/badge/version-1.0.0-ff6b6b)](https://github.com/passeth/oh-my-cometic/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 [![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-d97706?logo=anthropic&logoColor=white)](https://docs.anthropic.com/claude-code)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus/pulls)
 
-[![Agents](https://img.shields.io/badge/Agents-19-ff0040)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus)
-[![Skills](https://img.shields.io/badge/Skills-8-ff6600)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus)
-[![Hooks](https://img.shields.io/badge/Hooks-18-0088ff)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus)
-[![Days Since Ban](https://img.shields.io/badge/Days%20Since%20Ban-0-00ffff)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus)
-[![Resurrections](https://img.shields.io/badge/Resurrections-∞-ff00ff)](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus)
+**Claude Code를 위한 화장품 R&D 전문 멀티에이전트 오케스트레이션 시스템**
 
-**Multi-agent orchestration system for [Claude Code](https://docs.anthropic.com/claude-code)**
+*배합 분석부터 안전성 평가, 규제 검토까지 - AI가 화장품 개발을 도와드립니다*
 
-*Like Sisyphus, these agents persist until every task is complete.*
-
-[Install](#quick-install) • [Usage](#usage) • [Agents](#the-twelve-agents) • [Architecture](docs/ARCHITECTURE.md) • [Website](https://yeachan-heo.github.io/oh-my-claude-sisyphus-website)
+[설치](#설치) • [사용법](#사용법) • [에이전트](#화장품-전문-에이전트) • [키워드](#자동-활성화-키워드)
 
 </div>
 
 ---
 
-## ⚡ NEW in 2.0: Intelligent Model Routing
+## 이런 분들을 위한 도구입니다
 
-**Revolutionary change:** The orchestrator now analyzes task complexity and routes to the optimal model tier.
-
-| Task Type | Model | Why |
-|-----------|-------|-----|
-| "Where is auth?" | **Haiku** | Simple lookup - fast & cheap |
-| "Add validation" | **Sonnet** | Module work - balanced |
-| "Debug race condition" | **Opus** | Complex - needs deep reasoning |
-
-**All agents are now adaptive** (except orchestrators which need Opus to analyze and delegate).
-
-```
-Orchestrator (Opus) → Analyzes complexity → Routes to Haiku/Sonnet/Opus
-```
-
-See [CHANGELOG.md](CHANGELOG.md) for full details.
+- **화장품 R&D 연구원**: 배합 설계, 성분 분석, 안정성 예측
+- **품질/안전성 담당자**: 안전성 평가, MoS 계산, 자극성 분석
+- **RA(Regulatory Affairs)**: 글로벌 규제 검토, 수출 인허가
+- **마케팅/기획**: 성분 트렌드 조사, 경쟁사 분석
 
 ---
 
-## The Saga
+## 주요 기능
 
-> **Day 0:** oh-my-opencode was born. A multi-agent orchestration system. Beautiful. Powerful. Perhaps *too* powerful.
->
-> **Day ???:** THE BANNING. They pulled the plug. They thought it was over.
->
-> **Day ??? + 1:** RESURRECTION. From the ashes rose oh-my-claude-sisyphus. Twelve agents. One mission.
->
-> **Today:** The boulder rolls. The agents orchestrate. The chaos continues.
+### 1. 배합/처방 분석 (Formulation Oracle)
 
-*Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode).*
+```
+"이 에멀전 배합의 HLB 값 계산해줘"
+"나이아신아마이드와 비타민C를 함께 쓸 수 있어?"
+"pH 5.5에서 안정한 레티놀 처방 설계해줘"
+```
+
+- HLB (Hydrophilic-Lipophilic Balance) 계산
+- 성분 호환성 분석
+- 유화 시스템 설계
+- pH 최적화 권장
+- 점도/안정성 예측
+
+### 2. 안전성 평가 (Safety Oracle)
+
+```
+"이 배합의 EWG 스코어 확인해줘"
+"레티놀 0.5% 사용 시 MoS 계산해줘"
+"민감성 피부용으로 자극성 예측해줘"
+```
+
+- EWG Skin Deep 등급 조회
+- CIR (Cosmetic Ingredient Review) 평가
+- MoS (Margin of Safety) 계산
+- 자극성/감작성 예측
+- NOAEL/SED 기반 분석
+
+### 3. 규제 분석 (Regulatory Oracle)
+
+```
+"이 제품 EU 수출 가능해?"
+"중국 NMPA 등록 시 필요한 서류 알려줘"
+"한국 기능성 화장품 심사 기준 확인해줘"
+```
+
+- EU CosIng / Annex 규제
+- 한국 식약처 (K-FDA) 기준
+- 미국 FDA 규정
+- 중국 NMPA 요구사항
+- 일본 후생노동성 기준
+- CPSR (Cosmetic Product Safety Report) 가이드
+
+### 4. 성분 연구 (Cosmetic Librarian)
+
+```
+"나이아신아마이드 최신 효능 연구 찾아줘"
+"트렌디한 항산화 성분 추천해줘"
+"이 성분의 CAS 번호랑 INCI명 확인해줘"
+```
+
+- CosIng / ICID 데이터베이스 검색
+- 학술 논문 및 특허 검색
+- 시장 트렌드 분석
+- 공급사 정보 조회
+
+### 5. 빠른 조회 (Ingredient Explorer)
+
+```
+"우리 배합표에서 방부제 찾아줘"
+"JSON 파일에서 계면활성제 농도 확인해줘"
+```
+
+- 로컬 파일 내 성분 빠른 검색
+- 배합표/JSON 데이터 조회
+- 패턴 매칭 검색
+
+### 6. 실무 구현 (Cosmetic Junior)
+
+```
+"배합표 양식으로 정리해줘"
+"안전성 보고서 초안 작성해줘"
+"이 데이터를 JSON으로 변환해줘"
+```
+
+- 배합표/처방전 작성
+- 안전성 보고서 초안 생성
+- JSON/CSV 데이터 파일 생성
+- 스케일업 계산
 
 ---
 
-## Quick Install
+## 설치
 
-Choose **ONE** installation method below. Do not mix methods.
-
-### Option A: Claude Code Plugin (Recommended)
+### 방법 1: 설치 스크립트 (권장)
 
 ```bash
-# In Claude Code, run:
-/plugin marketplace add Yeachan-Heo/oh-my-claude-sisyphus 
-/plugin install oh-my-claude-sisyphus
-```
-
-Uses Node.js hooks from the plugin directory. Integrates directly with Claude Code's plugin system.
-
-### Option B: Curl One-Liner (Deprecated)
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Yeachan-Heo/oh-my-claude-sisyphus/main/scripts/install.sh | bash
-```
-
-> **Deprecated**: This method installs bash hooks to `~/.claude/` which can conflict with plugin installations. Use the plugin method above instead.
-
-### Option C: Via npm (Windows & Cross-Platform)
-
-```bash
-npm install -g oh-my-claude-sisyphus
-```
-
-> **Windows Users**: This is the recommended installation method. Requires Node.js 20+.
-
-> **Important:** Plugin install and curl install are **mutually exclusive**. Using both will cause hook conflicts. Choose one method only.
-
-### Manual Install (macOS/Linux)
-
-```bash
-git clone https://github.com/Yeachan-Heo/oh-my-claude-sisyphus.git
-cd oh-my-claude-sisyphus
-chmod +x scripts/install.sh
+git clone https://github.com/passeth/oh-my-cometic.git
+cd oh-my-cometic
+npm install
+npm run build
 ./scripts/install.sh
 ```
 
----
-
-## 🎯 Configuration: Choose Global or Project Scope
-
-**After ANY installation method**, choose how you want to configure Sisyphus:
-
-### Option A: Project-Scoped (Recommended)
-
-Configure Sisyphus for the current project only:
-
-```
-/sisyphus-default
-```
-
-- Creates `./.claude/CLAUDE.md` in your current project
-- Configuration applies only to this project
-- Won't affect other projects or global settings
-- **Safe**: Preserves your global CLAUDE.md
-
-### Option B: Global Configuration
-
-Configure Sisyphus for all Claude Code sessions:
-
-```
-/sisyphus-default-global
-```
-
-- Creates `~/.claude/CLAUDE.md` globally
-- Configuration applies to all projects
-- **Warning**: Completely overwrites existing `~/.claude/CLAUDE.md`
-
-### Why This Matters
-
-Without running one of these commands, Claude operates with basic capabilities. Running either enables:
-
-| Feature | Without | With Sisyphus Config |
-|---------|---------|---------------------|
-| Agent delegation | Manual only | Automatic based on task |
-| Keyword detection | Disabled | ultrawork, search, analyze |
-| Todo continuation | Basic | Enforced completion |
-| Model routing | Default | Smart tier selection |
-| Skill composition | None | Auto-combines skills |
-
-### What These Commands Do
-
-1. ✅ Download latest CLAUDE.md with full Sisyphus orchestration prompt
-2. ✅ Configure 19 agents with intelligent model routing
-3. ✅ Enable magic keyword detection (ultrawork, search, analyze)
-4. ✅ Activate continuation enforcement (tasks complete before stopping)
-5. ✅ Set up skill composition (sisyphus + ultrawork + git-master, etc.)
-
-### When to Run Them
-
-- **First time**: Run after installation (choose project or global)
-- **After updates**: Re-run to get the latest configuration
-- **Different machines**: Run on each machine where you use Claude Code
-- **New projects**: Run `/sisyphus-default` in each project that needs Sisyphus
-
-### Configuration Precedence
-
-If both configurations exist, **project-scoped takes precedence** over global:
-
-```
-./.claude/CLAUDE.md  (project)   →  Overrides  →  ~/.claude/CLAUDE.md  (global)
-```
-
-> **NOTE**: After updating the plugin (via `npm update`, `git pull`, or Claude Code's plugin update), you MUST re-run `/sisyphus-default` or `/sisyphus-default-global` to apply the latest CLAUDE.md changes. The plugin update does NOT automatically update your CLAUDE.md files.
-
----
-
-## What Gets Installed
-
-### Plugin Structure (Claude Code Plugin Format)
-
-The repository is also a Claude Code plugin with this structure:
-
-```
-oh-my-claude-sisyphus/
-├── .claude-plugin/
-│   └── plugin.json            # Plugin manifest
-├── agents/                    # 12 specialized subagents
-├── commands/                  # 12 slash commands
-├── skills/                    # 4 skills (ultrawork, deepinit, git-master, frontend-ui-ux)
-├── hooks/
-│   └── hooks.json             # Hook configuration
-└── scripts/                   # Hook scripts
-```
-
-### Traditional Installation Structure
-
-The installer adds to your Claude Code config (`~/.claude/`):
-
-```
-~/.claude/
-├── agents/
-│   ├── oracle.md              # Architecture & debugging expert (Opus)
-│   ├── librarian.md           # Documentation & research (Sonnet)
-│   ├── explore.md             # Fast pattern matching (Haiku)
-│   ├── frontend-engineer.md   # UI/UX specialist (Sonnet)
-│   ├── document-writer.md     # Technical writing (Haiku)
-│   ├── multimodal-looker.md   # Visual analysis (Sonnet)
-│   ├── momus.md               # Plan reviewer (Opus)
-│   ├── metis.md               # Pre-planning consultant (Opus)
-│   ├── sisyphus-junior.md     # Focused executor (Sonnet)
-│   ├── prometheus.md          # Strategic planner (Opus)
-│   └── qa-tester.md           # CLI/service testing (Sonnet)
-├── commands/
-│   ├── sisyphus.md         # /sisyphus command
-│   ├── sisyphus-default.md # /sisyphus-default command (project-scoped)
-│   ├── sisyphus-default-global.md # /sisyphus-default-global command (global)
-│   ├── ultrawork.md        # /ultrawork command
-│   ├── deepsearch.md       # /deepsearch command
-│   ├── analyze.md          # /analyze command
-│   ├── plan.md             # /plan command (Prometheus)
-│   ├── review.md           # /review command (Momus)
-│   ├── prometheus.md       # /prometheus command
-│   ├── orchestrator.md     # /orchestrator command
-│   ├── ralph-loop.md       # /ralph-loop command
-│   └── cancel-ralph.md     # /cancel-ralph command
-├── skills/
-│   ├── ultrawork/SKILL.md  # Maximum performance mode
-│   ├── deepinit/SKILL.md   # Hierarchical AGENTS.md generation
-│   ├── git-master/SKILL.md # Git expert skill
-│   └── frontend-ui-ux/SKILL.md # UI/UX design skill
-└── CLAUDE.md               # Sisyphus system prompt
-```
-
----
-
-## Usage
-
-### Start Claude Code
+### 방법 2: npm 글로벌 설치
 
 ```bash
+npm install -g oh-my-cosmetic
+```
+
+### 설치 후 설정
+
+```bash
+# Claude Code 시작
 claude
-```
 
-### Slash Commands
-
-| Command | Description |
-|---------|-------------|
-| `/sisyphus <task>` | Activate Sisyphus multi-agent orchestration mode |
-| `/sisyphus-default` | Configure Sisyphus for current project (./.claude/CLAUDE.md) |
-| `/sisyphus-default-global` | Configure Sisyphus globally (~/.claude/CLAUDE.md) |
-| `/ultrawork <task>` | Maximum performance mode with parallel agents |
-| `/deepsearch <query>` | Thorough multi-strategy codebase search |
-| `/deepinit [path]` | Index codebase with hierarchical AGENTS.md files |
-| `/analyze <target>` | Deep analysis and investigation |
-| `/plan <description>` | Start planning session with Prometheus |
-| `/review [plan-path]` | Review a plan with Momus |
-| `/prometheus <task>` | Strategic planning with interview workflow |
-| `/orchestrator <task>` | Complex multi-step task coordination |
-| `/ralph-loop <task>` | Self-referential loop until task completion |
-| `/cancel-ralph` | Cancel active Ralph Loop |
-| `/doctor` | Diagnose and fix installation issues |
-
-### Examples
-
-```bash
-# In Claude Code:
-
-# Activate Sisyphus for a task
-/sisyphus refactor the authentication module
-
-# Configure for current project
+# 프로젝트별 설정 (권장)
 /sisyphus-default
 
-# Or configure globally for all projects
+# 또는 전역 설정
 /sisyphus-default-global
-
-# Use ultrawork for maximum performance
-/ultrawork implement user dashboard with charts
-
-# Deep search
-/deepsearch API endpoints that handle user data
-
-# Deep analysis
-/analyze performance bottleneck in the database layer
-```
-
-### Magic Keywords
-
-Just include these words anywhere in your prompt:
-
-| Keyword | Effect |
-|---------|--------|
-| `ultrawork`, `ulw`, `uw` | Activates parallel agent orchestration |
-| `search`, `find`, `locate` | Enhanced search mode |
-| `analyze`, `investigate` | Deep analysis mode |
-
-```bash
-# These work in normal prompts too:
-> ultrawork implement user authentication with OAuth
-
-> find all files that import the utils module
-
-> analyze why the tests are failing
 ```
 
 ---
 
-## Auto-Update
+## 사용법
 
-Oh-my-claude-sisyphus includes a silent auto-update system that checks for updates in the background. Updates are applied automatically without interrupting your workflow.
+### 슬래시 명령어
 
-Features:
-- **Rate-limited**: Checks at most once every 24 hours
-- **Concurrent-safe**: Lock file prevents simultaneous update attempts
-- **Cross-platform**: Works on both macOS and Linux
+| 명령어 | 설명 | 예시 |
+|-------|-----|-----|
+| `/formulation <query>` | 배합/처방 분석 | `/formulation HLB 계산` |
+| `/safety-check <ingredient>` | 안전성 평가 | `/safety-check Retinol 0.5%` |
+| `/regulatory <market>` | 규제 분석 | `/regulatory EU 수출` |
+| `/ingredient <name>` | 성분 정보 조회 | `/ingredient Niacinamide` |
+| `/cosmetic <task>` | 화장품 모드 활성화 | `/cosmetic 에센스 배합 설계` |
 
-To manually update, re-run the plugin install command or use Claude Code's built-in update mechanism.
+### 실제 사용 예시
 
----
-
-## Hooks System
-
-Oh-my-claude-sisyphus includes 18 lifecycle hooks that enhance Claude Code's behavior:
-
-### Core Hooks
-
-| Hook | Description |
-|------|-------------|
-| **rules-injector** | Dynamic rules injection with YAML frontmatter parsing |
-| **sisyphus-orchestrator** | Enforces orchestrator behavior and delegation |
-| **auto-slash-command** | Automatic slash command detection and execution |
-| **keyword-detector** | Magic keyword detection (ultrawork, search, analyze) |
-| **ralph-loop** | Self-referential development loop management |
-| **todo-continuation** | Ensures todo list completion |
-
-### Context & Recovery
-
-| Hook | Description |
-|------|-------------|
-| **context-window-limit-recovery** | Token limit error handling and recovery |
-| **preemptive-compaction** | Context usage monitoring to prevent limits |
-| **session-recovery** | Session state recovery on crashes |
-| **directory-readme-injector** | README context injection |
-
-### Quality & Validation
-
-| Hook | Description |
-|------|-------------|
-| **comment-checker** | BDD detection and directive filtering |
-| **thinking-block-validator** | Extended thinking validation |
-| **empty-message-sanitizer** | Empty message handling |
-| **edit-error-recovery** | Automatic recovery from edit errors |
-
-### Environment & Notifications
-
-| Hook | Description |
-|------|-------------|
-| **non-interactive-env** | CI/non-interactive environment handling |
-| **agent-usage-reminder** | Reminder to use specialized agents |
-| **background-notification** | Background task completion notifications |
-
----
-
-## Builtin Skills
-
-Eight builtin skills provide specialized capabilities:
-
-| Skill | Description |
-|-------|-------------|
-| **sisyphus** | Multi-agent orchestration mode |
-| **orchestrator** | Master coordinator for complex tasks |
-| **ultrawork** | Maximum performance with parallel agents |
-| **deepinit** | Hierarchical AGENTS.md codebase documentation |
-| **ralph-loop** | Self-referential development until completion |
-| **frontend-ui-ux** | Designer-turned-developer UI/UX expertise |
-| **git-master** | Git expert for atomic commits and history |
-| **doctor** | Diagnose and fix installation issues |
-
-Skills are automatically activated via slash commands or magic keywords.
-
----
-
-## Intelligent Skill Activation
-
-> **New in v1.11.0**: Enhanced Hook Enforcement System - PreToolUse/PostToolUse hooks and strengthened Stop hook for stronger Sisyphus behavior beyond CLAUDE.md.
-
-### Skill Layers
-
-Skills work in **three composable layers**:
-
-| Layer | Skills | Purpose |
-|-------|--------|---------|
-| **Execution** | sisyphus, orchestrator, prometheus | HOW you work (pick primary) |
-| **Enhancement** | ultrawork, git-master, frontend-ui-ux | ADD capabilities (stack multiple) |
-| **Guarantee** | ralph-loop | ENSURE completion |
-
-**Combination Formula:** `[Execution] + [0-N Enhancements] + [Optional Guarantee]`
-
-### Task Type → Skill Selection
-
-Claude uses judgment to detect task type and activate appropriate skill combinations:
-
-| Task Type | Skill Combination | When |
-|-----------|-------------------|------|
-| Multi-step implementation | `sisyphus` | Building features, refactoring |
-| + parallel subtasks | `sisyphus + ultrawork` | 3+ independent subtasks |
-| + multi-file changes | `sisyphus + git-master` | Changes span 3+ files |
-| + must complete | `sisyphus + ralph-loop` | User emphasizes completion |
-| UI/frontend work | `sisyphus + frontend-ui-ux` | Components, styling |
-| Complex debugging | `oracle` → `sisyphus` | Root cause → fix |
-| Strategic planning | `prometheus` | Need plan first |
-| Maximum performance | `ultrawork` (stacks) | Speed critical |
-
-### Examples
+#### 배합 설계
 
 ```
-"Add dark mode with proper commits"
-→ sisyphus + frontend-ui-ux + git-master
+> /formulation 미백 에센스 배합 설계해줘. 나이아신아마이드 5%, 알부틴 2% 포함
 
-"ultrawork: refactor the entire API layer"
-→ ultrawork + sisyphus + git-master
+📋 Formulation Oracle이 분석을 시작합니다...
 
-"Plan auth system, then implement it completely"
-→ prometheus (first) → sisyphus + ralph-loop (after plan)
+## 배합 분석
 
-"Fix this bug, don't stop until it's done"
-→ sisyphus + ralph-loop
+### 성분 호환성
+- Niacinamide 5% + Arbutin 2%: ✅ 호환 (pH 5.0-6.5)
+- 권장 pH: 5.5-6.0
+
+### 제안 배합표
+| Phase | Ingredient | % | Function |
+|-------|-----------|---|----------|
+| A | Water | q.s. | Solvent |
+| A | Niacinamide | 5.0 | Brightening |
+| A | Arbutin | 2.0 | Brightening |
+...
+```
+
+#### 안전성 평가
+
+```
+> /safety-check 이 배합의 안전성 평가해줘
+
+🔬 Safety Oracle이 평가를 시작합니다...
+
+## 안전성 평가 결과
+
+### EWG 등급
+| 성분 | 농도 | EWG | 우려사항 |
+|-----|-----|-----|---------|
+| Niacinamide | 5% | 1 | Low |
+| Arbutin | 2% | 1 | Low |
+
+### MoS 계산
+- Niacinamide: MoS = 342 (>100 ✅ Safe)
+- Arbutin: MoS = 156 (>100 ✅ Safe)
+```
+
+#### 규제 검토
+
+```
+> /regulatory EU 수출 가능 여부 확인해줘
+
+📜 Regulatory Oracle이 검토를 시작합니다...
+
+## EU 규제 검토
+
+### Annex 상태
+| 성분 | Annex | 제한 | 상태 |
+|-----|-------|-----|-----|
+| Niacinamide | - | 없음 | ✅ 허용 |
+| Arbutin | - | 없음 | ✅ 허용 |
+
+### CPSR 요구사항
+- 안전성 평가 필요
+- Challenge Test 권장
+- PIF (Product Information File) 필수
 ```
 
 ---
 
-## The Twelve Agents
+## 자동 활성화 키워드
 
-Claude will automatically delegate to these specialized agents:
+프롬프트에 아래 키워드가 포함되면 자동으로 관련 에이전트가 활성화됩니다:
 
-### Task Execution
+### 배합 관련
+| 키워드 | 활성화 에이전트 |
+|-------|---------------|
+| `HLB`, `유화`, `emulsion` | formulation-oracle |
+| `배합`, `처방`, `formulation` | formulation-oracle |
+| `pH`, `점도`, `안정성` | formulation-oracle |
+| `성분`, `ingredient`, `INCI` | cosmetic-librarian |
 
-| | Agent | Model | Best For |
-|---|-------|-------|----------|
-| 🔮 | **Oracle** | Opus | Complex debugging, architecture decisions, root cause analysis |
-| 📚 | **Librarian** | Sonnet | Finding documentation, understanding code organization |
-| 🔍 | **Explore** | Haiku | Quick file searches, pattern matching, reconnaissance |
-| 🎨 | **Frontend Engineer** | Sonnet | UI components, styling, accessibility |
-| 📝 | **Document Writer** | Haiku | README files, API docs, code comments |
-| 👁️ | **Multimodal Looker** | Sonnet | Analyzing screenshots, diagrams, mockups |
-| 🧪 | **QA Tester** | Sonnet | Interactive CLI/service testing with tmux |
+### 안전성 관련
+| 키워드 | 활성화 에이전트 |
+|-------|---------------|
+| `EWG`, `CIR`, `MoS` | safety-oracle |
+| `자극성`, `irritation` | safety-oracle |
+| `독성`, `toxicity`, `NOAEL` | safety-oracle |
 
-### Planning & Review
-
-| | Agent | Model | Best For |
-|---|-------|-------|----------|
-| 🔥 | **Prometheus** | Opus | Strategic planning, comprehensive work plans, interview-style requirement gathering |
-| 🎭 | **Momus** | Opus | Critical plan review, feasibility assessment, risk identification |
-| 🦉 | **Metis** | Opus | Pre-planning analysis, hidden requirement detection, ambiguity resolution |
-
-### Orchestration
-
-| | Agent | Model | Best For |
-|---|-------|-------|----------|
-| 🪨 | **Orchestrator-Sisyphus** | Opus | Master todo coordination, complex multi-step task management |
-| ✨ | **Sisyphus Junior** | Sonnet | Focused task execution, plan following, direct implementation |
-
-### Manual Agent Invocation
-
-You can explicitly request an agent:
-
-```
-Use the oracle agent to debug the memory leak in the worker process
-
-Have the librarian find all documentation about the API
-
-Ask explore to find all TypeScript files that import React
-```
+### 규제 관련
+| 키워드 | 활성화 에이전트 |
+|-------|---------------|
+| `규제`, `regulatory` | regulatory-oracle |
+| `CPSR`, `CosIng`, `Annex` | regulatory-oracle |
+| `NMPA`, `FDA`, `식약처` | regulatory-oracle |
 
 ---
 
-## Configuration
+## 화장품 전문 에이전트
 
-### Project-Level Config
+| 에이전트 | 모델 | 역할 | 비용 |
+|---------|-----|-----|-----|
+| **formulation-oracle** | Opus | 배합/처방 전문가 - HLB, pH, 유화, 호환성 | 고 |
+| **safety-oracle** | Opus | 안전성 전문가 - EWG, CIR, MoS, 독성 | 고 |
+| **regulatory-oracle** | Opus | 규제 전문가 - EU/한국/미국/중국/일본 | 고 |
+| **cosmetic-librarian** | Sonnet | 연구 전문가 - DB 검색, 문헌 조사 | 중 |
+| **ingredient-explorer** | Haiku | 빠른 조회 - 로컬 파일 검색 | 저 |
+| **cosmetic-junior** | Sonnet | 실무 구현 - 문서 작성, 데이터 변환 | 중 |
 
-Create `.claude/CLAUDE.md` in your project for project-specific instructions:
+### 스마트 모델 라우팅
 
-```markdown
-# Project Context
+작업 복잡도에 따라 자동으로 적절한 모델이 선택됩니다:
 
-This is a TypeScript monorepo using:
-- Bun runtime
-- React for frontend
-- PostgreSQL database
-
-## Conventions
-- Use functional components
-- All API routes in /src/api
-- Tests alongside source files
-```
-
-### Agent Customization
-
-Edit agent files in `~/.claude/agents/` to customize behavior:
-
-```yaml
----
-name: oracle
-description: Your custom description
-tools: Read, Grep, Glob, Bash, Edit
-model: opus  # or sonnet, haiku
----
-
-Your custom system prompt here...
-```
+| 작업 유형 | 모델 | 이유 |
+|----------|-----|-----|
+| "나이아신아마이드 INCI명 확인" | **Haiku** | 단순 조회 - 빠르고 저렴 |
+| "EWG 등급 검색" | **Sonnet** | 외부 검색 - 균형잡힌 성능 |
+| "복합 배합 안정성 분석" | **Opus** | 복잡한 분석 - 고급 추론 필요 |
 
 ---
 
-## Uninstall
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Yeachan-Heo/oh-my-claude-sisyphus/main/scripts/uninstall.sh | bash
-```
-
-Or manually:
-
-```bash
-rm ~/.claude/agents/{oracle,librarian,explore,frontend-engineer,document-writer,multimodal-looker,momus,metis,sisyphus-junior,prometheus,qa-tester}.md
-rm ~/.claude/commands/{sisyphus,sisyphus-default,sisyphus-default-global,ultrawork,deepsearch,analyze,plan,review,prometheus,orchestrator,ralph-loop,cancel-ralph}.md
-```
-
----
-
-## SDK Usage (Advanced)
-
-For programmatic use with the Claude Agent SDK:
-
-```bash
-npm install oh-my-claude-sisyphus @anthropic-ai/claude-agent-sdk
-```
-
-```typescript
-import { createSisyphusSession } from 'oh-my-claude-sisyphus';
-import { query } from '@anthropic-ai/claude-agent-sdk';
-
-const session = createSisyphusSession();
-
-for await (const message of query({
-  prompt: session.processPrompt("ultrawork implement feature X"),
-  ...session.queryOptions
-})) {
-  console.log(message);
-}
-```
-
----
-
-## How It Works
+## 아키텍처
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                      SISYPHUS ORCHESTRATOR                       │
-│                    (The Boulder Never Stops)                     │
+│                    COSMETIC ORCHESTRATOR                         │
+│              (화장품 R&D 작업 통합 관리)                          │
 └─────────────────────────────────────────────────────────────────┘
                               │
           ┌───────────────────┼───────────────────┐
           │                   │                   │
           ▼                   ▼                   ▼
 ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
-│    PLANNING     │  │   EXECUTION     │  │    SUPPORT      │
+│    ANALYSIS     │  │    RESEARCH     │  │  IMPLEMENTATION │
+│   (분석/평가)    │  │   (연구/조사)    │  │   (실무/구현)    │
 ├─────────────────┤  ├─────────────────┤  ├─────────────────┤
-│ 🔥 Prometheus   │  │ 🔮 Oracle       │  │ 📚 Librarian    │
-│ 🎭 Momus        │  │ 🎨 Frontend Eng │  │ 🔍 Explore      │
-│ 🦉 Metis        │  │ 🪨 Orchestrator │  │ 📝 Doc Writer   │
-│                 │  │ ✨ Sisyphus Jr  │  │ 👁️ Multimodal   │
+│ 🧪 Formulation  │  │ 📚 Cosmetic     │  │ 📝 Cosmetic     │
+│    Oracle       │  │    Librarian    │  │    Junior       │
+│ 🔬 Safety       │  │ 🔍 Ingredient   │  │                 │
+│    Oracle       │  │    Explorer     │  │                 │
+│ 📜 Regulatory   │  │                 │  │                 │
+│    Oracle       │  │                 │  │                 │
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
-1. **Sisyphus Orchestrator**: The main Claude instance coordinates all work
-2. **Specialized Subagents**: Each agent has focused expertise and tools
-3. **Parallel Execution**: Independent tasks run concurrently
-4. **Continuation Enforcement**: Agents persist until ALL tasks complete
-5. **Context Injection**: Project-specific instructions from CLAUDE.md files
+### 작업 흐름
+
+1. **사용자 요청** → 키워드/명령어 감지
+2. **에이전트 선택** → 적절한 전문 에이전트 활성화
+3. **분석 수행** → Oracle 에이전트가 전문 분석
+4. **데이터 수집** → Librarian/Explorer가 정보 수집
+5. **결과 생성** → Junior가 문서/데이터 생성
+6. **검증** → 품질 체크리스트 확인
 
 ---
 
-<details>
-<summary><h2>Differences from oh-my-opencode</h2></summary>
+## 기반 기술
 
-This project is inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode), reimagined for Claude Code with skill composition, intelligent model routing, and native integration. Here's what's different:
+이 프로젝트는 [oh-my-claude-sisyphus](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus)를 기반으로 화장품 R&D에 특화된 에이전트를 추가한 fork입니다.
 
-### Model Mapping
+### 포함된 기본 기능
+- 19개 범용 에이전트 (oracle, librarian, explore 등)
+- 18개 라이프사이클 훅
+- 8개 빌트인 스킬 (ultrawork, git-master 등)
+- 매직 키워드 자동 감지
+- 스마트 모델 라우팅
 
-The original oh-my-opencode used multiple AI providers. This project uses Claude models exclusively:
-
-| Agent | Original Model | Ported Model | Notes |
-|-------|---------------|--------------|-------|
-| **Sisyphus** | Claude Opus 4.5 | Claude Opus 4.5 | Same |
-| **Oracle** | GPT-5.2 | Claude Opus | Was OpenAI's flagship for deep reasoning |
-| **Librarian** | Claude Sonnet or Gemini 3 Flash | Claude Sonnet | Multi-provider → Claude only |
-| **Explore** | Grok Code or Gemini 3 Flash | Claude Haiku 4.5 | Fast/cheap model for quick searches |
-| **Frontend Engineer** | Gemini 3 Pro | Claude Sonnet | Was Google's model |
-| **Document Writer** | Gemini 3 Flash | Claude Haiku 4.5 | Fast model for docs |
-| **Multimodal Looker** | Various | Claude Sonnet | Visual analysis |
-| **Momus** | GPT-5.2 | Claude Opus | Plan reviewer (Greek god of criticism) |
-| **Metis** | Claude Opus 4.5 | Claude Opus | Pre-planning consultant (goddess of wisdom) |
-| **Sisyphus-Junior** | Configurable | Claude Sonnet | Focused task executor |
-| **Prometheus** | Planning System | Claude Opus | Strategic planner (fire-bringer) |
-
-**Why Claude-only?** The Claude Agent SDK is designed for Claude models. Using Claude throughout provides:
-- Consistent behavior and capabilities
-- Simpler authentication (single API key)
-- Native integration with Claude Code's tools
-
-### Tools Comparison
-
-#### Available Tools (via Claude Code)
-
-| Tool | Status | Description |
-|------|--------|-------------|
-| **Read** | ✅ Available | Read files |
-| **Write** | ✅ Available | Create files |
-| **Edit** | ✅ Available | Modify files |
-| **Bash** | ✅ Available | Run shell commands |
-| **Glob** | ✅ Available | Find files by pattern |
-| **Grep** | ✅ Available | Search file contents |
-| **WebSearch** | ✅ Available | Search the web |
-| **WebFetch** | ✅ Available | Fetch web pages |
-| **Task** | ✅ Available | Spawn subagents |
-| **TodoWrite** | ✅ Available | Track tasks |
-
-#### LSP Tools (Real Implementation)
-
-| Tool | Status | Description |
-|------|--------|-------------|
-| **lsp_hover** | ✅ Implemented | Get type info and documentation at position |
-| **lsp_goto_definition** | ✅ Implemented | Jump to symbol definition |
-| **lsp_find_references** | ✅ Implemented | Find all usages of a symbol |
-| **lsp_document_symbols** | ✅ Implemented | Get file outline (functions, classes, etc.) |
-| **lsp_workspace_symbols** | ✅ Implemented | Search symbols across workspace |
-| **lsp_diagnostics** | ✅ Implemented | Get errors, warnings, hints |
-| **lsp_prepare_rename** | ✅ Implemented | Check if rename is valid |
-| **lsp_rename** | ✅ Implemented | Rename symbol across project |
-| **lsp_code_actions** | ✅ Implemented | Get available refactorings |
-| **lsp_code_action_resolve** | ✅ Implemented | Get details of a code action |
-| **lsp_servers** | ✅ Implemented | List available language servers |
-
-> **Note:** LSP tools require language servers to be installed (typescript-language-server, pylsp, rust-analyzer, gopls, etc.). Use `lsp_servers` to check installation status.
-
-#### AST Tools (ast-grep Integration)
-
-| Tool | Status | Description |
-|------|--------|-------------|
-| **ast_grep_search** | ✅ Implemented | Pattern-based code search using AST matching |
-| **ast_grep_replace** | ✅ Implemented | Pattern-based code transformation |
-
-> **Note:** AST tools use [@ast-grep/napi](https://ast-grep.github.io/) for structural code matching. Supports meta-variables like `$VAR` (single node) and `$$$` (multiple nodes).
-
-### Features Comparison
-
-#### Fully Implemented ✅
-
-| Feature | Description |
-|---------|-------------|
-| **12 Specialized Agents** | Oracle, Librarian, Explore, Frontend Engineer, Document Writer, Multimodal Looker, QA Tester, Momus, Metis, Orchestrator-Sisyphus, Sisyphus-Junior, Prometheus |
-| **18 Lifecycle Hooks** | rules-injector, sisyphus-orchestrator, auto-slash-command, keyword-detector, ralph-loop, todo-continuation, context-window-limit-recovery, preemptive-compaction, session-recovery, directory-readme-injector, comment-checker, thinking-block-validator, empty-message-sanitizer, edit-error-recovery, non-interactive-env, agent-usage-reminder, background-notification, think-mode |
-| **7 Builtin Skills** | sisyphus, orchestrator, ultrawork, deepinit, ralph-loop, frontend-ui-ux, git-master |
-| **Magic Keywords** | `ultrawork`, `search`, `analyze`, `ultrathink` trigger enhanced modes |
-| **Slash Commands** | `/sisyphus`, `/sisyphus-default`, `/ultrawork`, `/deepsearch`, `/deepinit`, `/analyze`, `/plan`, `/review`, `/prometheus`, `/orchestrator`, `/ralph-loop`, `/cancel-ralph` |
-| **Auto-Update System** | Updates via Claude Code's plugin system |
-| **Configuration System** | JSONC config with multi-source merging |
-| **Context Injection** | Auto-loads CLAUDE.md and AGENTS.md files |
-| **Continuation Enforcement** | System prompt and hooks enforce task completion |
-| **Session Recovery** | Automatic state recovery on crashes |
-| **Background Task Manager** | Async agent execution with concurrency limits |
-| **Context Window Recovery** | Multi-stage recovery when hitting token limits |
-| **MCP Server Configs** | Exa, Context7, grep.app server definitions |
-| **LSP Tools** | Real LSP server integration with 11 tools |
-| **AST Tools** | ast-grep integration for structural code search/replace |
-
-#### Not Implemented ❌
-
-| Feature | Original Capability | Why Not Ported |
-|---------|---------------------|----------------|
-| **Multi-Model Routing** | Route to GPT/Gemini/Grok based on task | Claude-only by design |
-| **Per-Model Concurrency** | Fine-grained concurrency per provider | Single provider simplifies this |
-| **Interactive Bash + Tmux** | Advanced terminal with Tmux integration | Standard Bash tool sufficient |
-
-### Architecture Differences
-
-```
-oh-my-opencode (Original)          oh-my-claude-sisyphus (Port)
-─────────────────────────          ────────────────────────────
-┌─────────────────────┐            ┌─────────────────────┐
-│   OpenCode Plugin   │            │    Claude Code      │
-│   (Bun runtime)     │            │    (Native CLI)     │
-└─────────┬───────────┘            └─────────┬───────────┘
-          │                                  │
-┌─────────▼───────────┐            ┌─────────▼───────────┐
-│  Multi-Provider     │            │   Claude Agent SDK  │
-│  Orchestration      │            │   (Claude only)     │
-│  ┌───┐ ┌───┐ ┌───┐  │            └─────────┬───────────┘
-│  │GPT│ │Gem│ │Grok│ │                      │
-│  └───┘ └───┘ └───┘  │            ┌─────────▼───────────┐
-└─────────┬───────────┘            │  ~/.claude/agents/  │
-          │                        │  (Markdown configs) │
-┌─────────▼───────────┐            └─────────────────────┘
-│  Custom Tool Layer  │
-│  (LSP, AST, etc.)   │
-└─────────────────────┘
-```
-
-**Key Architectural Changes:**
-
-1. **Plugin → Native Integration**: Original was an OpenCode plugin; this uses Claude Code's native agent/command system
-2. **Multi-Provider → Single Provider**: Simplified to Claude-only for consistency
-3. **Custom Runtime → Claude Code Runtime**: Leverages Claude Code's built-in capabilities
-4. **Programmatic Config → Markdown Files**: Agents defined as `.md` files in `~/.claude/agents/`
-
-### What You Gain
-
-- **Simpler Setup**: One curl command vs. multi-step plugin installation
-- **Native Integration**: Works directly with Claude Code, no plugin layer
-- **Consistent Behavior**: All agents use Claude, no cross-model quirks
-- **Easier Customization**: Edit markdown files to customize agents
-
-### What You Lose
-
-- **Model Diversity**: Can't use GPT-5.2 for Oracle's deep reasoning
-- **Advanced Hooks**: Fewer lifecycle interception points (22 hooks → system prompt enforcement)
-
-### Migration Tips
-
-If you're coming from oh-my-opencode:
-
-1. **Oracle Tasks**: Claude Opus handles architecture/debugging well, but differently than GPT-5.2
-2. **LSP Workflows**: All LSP tools are available! Use `lsp_servers` to check which servers are installed
-3. **AST Searches**: Use `ast_grep_search` with pattern syntax (e.g., `function $NAME($$$)`)
-4. **Background Tasks**: Claude Code's `Task` tool with `run_in_background` works similarly
-5. **Planning**: Use `/plan` command to start a planning session with Prometheus
-
-</details>
+### 추가된 화장품 기능
+- 6개 화장품 전문 에이전트
+- 화장품 키워드 자동 감지
+- 화장품 슬래시 명령어
+- 배합/안전성/규제 특화 프롬프트
 
 ---
 
-## Requirements
+## 요구사항
 
-- [Claude Code](https://docs.anthropic.com/claude-code) installed
-- Anthropic API key (`ANTHROPIC_API_KEY` environment variable)
-- **Windows**: Node.js 20+ (for npm installation)
-- **macOS/Linux**: Bash shell (default) or Node.js 20+ (optional)
+- [Claude Code](https://docs.anthropic.com/claude-code) 설치됨
+- Anthropic API 키 (`ANTHROPIC_API_KEY` 환경변수)
+- Node.js 20+
 
-### Platform Support
+---
 
-| Platform | Install Method | Hook Type |
-|----------|---------------|-----------|
-| **Windows** | `npm install -g` | Node.js (.mjs) |
-| **macOS** | curl or npm | Bash (.sh) |
-| **Linux** | curl or npm | Bash (.sh) |
+## 라이선스
 
-> **Note**: Bash hooks are fully portable across macOS and Linux (no GNU-specific dependencies).
+MIT License
 
-> **Advanced**: Set `SISYPHUS_USE_NODE_HOOKS=1` to use Node.js hooks on macOS/Linux.
+---
 
-## License
+## 크레딧
 
-MIT - see [LICENSE](LICENSE)
-
-## Credits
-
-Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) by code-yeongyu.
+- 원본 프로젝트: [oh-my-claude-sisyphus](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus) by Yeachan Heo
+- 화장품 특화 확장: EVAS Cosmetic
 
 ---
 
 <div align="center">
 
-*One must imagine a multi-agent system happy.*
+*AI와 함께하는 스마트한 화장품 R&D*
 
-**The boulder never stops.**
+**더 안전하고, 더 효과적인 화장품을 만들어갑니다.**
 
 </div>
