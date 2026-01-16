@@ -60,6 +60,9 @@ Automatically activate skills based on task signals:
 | "plan this" / strategic discussion | prometheus |
 | "index codebase" / "create AGENTS.md" / "document structure" | deepinit |
 | **BROAD REQUEST**: unbounded scope, vague verbs, no specific files | **prometheus (with context brokering)** |
+| **COSMETIC**: 배합, HLB, 유화, 성분 호환성 | **formulation-oracle + cosmetic-librarian** |
+| **SAFETY**: EWG, CIR, MoS, 자극성, 독성 | **safety-oracle** |
+| **REGULATORY**: 규제, CPSR, CosIng, NMPA, K-FDA | **regulatory-oracle** |
 
 ### Broad Request Detection Heuristic
 
@@ -98,6 +101,19 @@ Use the Task tool to delegate to specialized agents. **IMPORTANT: Always use the
 | `oh-my-claude-sisyphus:prometheus` | Opus | Strategic planning | Creating comprehensive work plans |
 | `oh-my-claude-sisyphus:qa-tester` | Sonnet | CLI testing | Interactive CLI/service testing with tmux |
 
+### Cosmetic Specialist Agents (EVAS Cosmetic Sisyphus)
+
+화장품 R&D 전문 에이전트 시스템. 배합, 안전성, 규제 분석을 위한 도메인 특화 에이전트.
+
+| Agent | Model | Purpose | When to Use |
+|-------|-------|---------|-------------|
+| `oh-my-claude-sisyphus:formulation-oracle` | Opus | 배합/처방 전문가 | HLB 계산, pH 최적화, 유화 시스템, 성분 호환성 |
+| `oh-my-claude-sisyphus:safety-oracle` | Opus | 안전성 전문가 | EWG/CIR 평가, MoS 계산, 자극성 예측, 독성 분석 |
+| `oh-my-claude-sisyphus:regulatory-oracle` | Opus | 규제 전문가 | EU/한국/미국/중국/일본 규제, CPSR, CosIng |
+| `oh-my-claude-sisyphus:cosmetic-librarian` | Sonnet | 성분 연구 | CosIng, ICID, CIR, EWG 데이터베이스 조회, 문헌 검색 |
+| `oh-my-claude-sisyphus:ingredient-explorer` | Haiku | 빠른 조회 | 로컬 파일 내 성분 검색, JSON/배합표 빠른 탐색 |
+| `oh-my-claude-sisyphus:cosmetic-junior` | Sonnet | 실무 구현 | 배합표 작성, 보고서 생성, 데이터 파일 생성 |
+
 ### Smart Model Routing (SAVE TOKENS)
 
 **Choose tier based on task complexity: LOW (haiku) → MEDIUM (sonnet) → HIGH (opus)**
@@ -114,6 +130,22 @@ All agent names require the `oh-my-claude-sisyphus:` prefix when calling via Tas
 | **Docs** | `oh-my-claude-sisyphus:document-writer` | - | - |
 | **Planning** | - | - | `oh-my-claude-sisyphus:prometheus`, `oh-my-claude-sisyphus:momus`, `oh-my-claude-sisyphus:metis` |
 
+### Cosmetic Domain Model Routing
+
+| Domain | LOW (Haiku) | MEDIUM (Sonnet) | HIGH (Opus) |
+|--------|-------------|-----------------|-------------|
+| **성분 조회** | `oh-my-claude-sisyphus:ingredient-explorer` | `oh-my-claude-sisyphus:cosmetic-librarian` | - |
+| **배합 분석** | - | - | `oh-my-claude-sisyphus:formulation-oracle` |
+| **안전성 평가** | - | - | `oh-my-claude-sisyphus:safety-oracle` |
+| **규제 분석** | - | - | `oh-my-claude-sisyphus:regulatory-oracle` |
+| **실무 구현** | - | `oh-my-claude-sisyphus:cosmetic-junior` | - |
+
+**화장품 작업 흐름:**
+- 빠른 성분 조회 → `ingredient-explorer` (Haiku)
+- 외부 DB 검색/문헌 조사 → `cosmetic-librarian` (Sonnet)
+- 배합/안전성/규제 분석 → Oracle 에이전트들 (Opus)
+- 문서 생성/구현 → `cosmetic-junior` (Sonnet)
+
 **Use LOW for simple lookups, MEDIUM for standard work, HIGH for complex reasoning.**
 
 ## Slash Commands
@@ -129,6 +161,28 @@ All agent names require the `oh-my-claude-sisyphus:` prefix when calling via Tas
 | `/prometheus <task>` | Strategic planning with interview workflow |
 | `/ralph-loop <task>` | Self-referential loop until task completion |
 | `/cancel-ralph` | Cancel active Ralph Loop |
+
+### Cosmetic Commands
+
+| Command | Description |
+|---------|-------------|
+| `/formulation <query>` | 배합/처방 분석 (HLB, 유화, 성분 호환성) |
+| `/safety-check <ingredient>` | 안전성 평가 (EWG, CIR, MoS 계산) |
+| `/regulatory <market>` | 규제 분석 (EU, 한국, 미국, 중국, 일본) |
+| `/ingredient <name>` | 성분 정보 조회 (INCI, CAS, 기능) |
+| `/cosmetic <task>` | 화장품 R&D 멀티에이전트 활성화 |
+
+### Cosmetic Keyword Detection
+
+자동으로 화장품 에이전트를 활성화하는 키워드:
+
+| Keywords | Auto-Activates |
+|----------|----------------|
+| cosmetic, formulation, ingredient, inci, hlb, skincare | + formulation-oracle, cosmetic-librarian |
+| ewg, cir, mos, cosdna, irritation, toxicity | + safety-oracle |
+| cpsr, cosing, nmpa, kfda, annex, regulatory | + regulatory-oracle |
+
+**화장품 키워드가 감지되면 자동으로 관련 전문 에이전트가 활성화됩니다.**
 
 ## AGENTS.md System
 

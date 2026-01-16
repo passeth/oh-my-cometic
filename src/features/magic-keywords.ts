@@ -325,6 +325,109 @@ Use maximum cognitive effort before responding.`;
 };
 
 /**
+ * Cosmetic mode enhancement - EVAS Cosmetic Sisyphus
+ * Activates cosmetic R&D specialized multi-agent system
+ */
+const cosmeticEnhancement: MagicKeyword = {
+  triggers: ['cosmetic', 'formulation', 'formulate', 'ingredient', 'inci', 'hlb', 'skincare', 'cosmetics'],
+  description: 'Activates cosmetic R&D multi-agent system with specialized experts',
+  action: (prompt: string) => {
+    // Multi-language cosmetic pattern
+    const cosmeticPattern = /\b(cosmetic|formulation|formulate|ingredient|inci|hlb|skincare|cosmetics|serum|emulsion|cream|lotion)\b|배합|처방|성분|제형|화장품|스킨케어|세럼|에멀전|크림|로션|유화|점도|pH|안정성|配方|成分|化妆品|護膚/i;
+
+    const hasCosmeticCommand = cosmeticPattern.test(removeCodeBlocks(prompt));
+
+    if (!hasCosmeticCommand) {
+      return prompt;
+    }
+
+    return `${prompt}
+
+[cosmetic-mode]
+COSMETIC R&D MODE ACTIVATED. 화장품 전문 에이전트 시스템 활성화.
+
+## Available Cosmetic Specialists
+
+| Agent | Expertise | When to Use |
+|-------|-----------|-------------|
+| formulation-oracle | HLB, pH, 안정성, 호환성 | 배합 분석, 제형 설계 |
+| safety-oracle | EWG, CIR, MoS, 자극성 | 안전성 평가 |
+| regulatory-oracle | EU/한국/미국/중국 규제 | 인허가, 수출 |
+| cosmetic-librarian | CosIng, 문헌, 트렌드 | 성분 연구, 데이터 조회 |
+| ingredient-explorer | 로컬 데이터 검색 | 빠른 성분 찾기 |
+| cosmetic-junior | 배합표, 보고서 작성 | 실무 구현 |
+
+## Workflow
+1. 요청 분석 → 적절한 전문가 선택
+2. 병렬로 관련 에이전트 실행
+3. 결과 종합 및 검증
+4. 구현 필요시 cosmetic-junior 호출
+
+ALWAYS delegate to appropriate specialist. Formulation → formulation-oracle, Safety → safety-oracle, etc.`;
+  }
+};
+
+/**
+ * Safety assessment mode - for cosmetic safety evaluation
+ */
+const safetyCosmeticEnhancement: MagicKeyword = {
+  triggers: ['ewg', 'cir', 'mos', 'cosdna', 'irritation', 'toxicity'],
+  description: 'Activates cosmetic safety assessment mode',
+  action: (prompt: string) => {
+    const safetyPattern = /\b(ewg|cir|mos|cosdna|irritation|toxicity|safety\s*assessment|안전성|자극|독성|알레르기|코메도)\b/i;
+
+    const hasSafetyCommand = safetyPattern.test(removeCodeBlocks(prompt));
+
+    if (!hasSafetyCommand) {
+      return prompt;
+    }
+
+    return `${prompt}
+
+[cosmetic-safety-mode]
+COSMETIC SAFETY MODE. 안전성 평가 전문 모드 활성화.
+
+DELEGATE TO: safety-oracle
+- EWG Skin Deep 등급 조회
+- CIR 안전성 평가 검토
+- MoS (Margin of Safety) 계산
+- 자극성/알레르기 위험 평가
+
+IF regulatory concerns: ESCALATE to regulatory-oracle`;
+  }
+};
+
+/**
+ * Regulatory mode - for cosmetic regulatory compliance
+ */
+const regulatoryCosmeticEnhancement: MagicKeyword = {
+  triggers: ['cpsr', 'cosing', 'nmpa', 'kfda', 'annex', 'regulatory'],
+  description: 'Activates cosmetic regulatory compliance mode',
+  action: (prompt: string) => {
+    const regulatoryPattern = /\b(cpsr|cosing|nmpa|kfda|annex|regulatory|인허가|기능성|수출|규제)\b/i;
+
+    const hasRegulatoryCommand = regulatoryPattern.test(removeCodeBlocks(prompt));
+
+    if (!hasRegulatoryCommand) {
+      return prompt;
+    }
+
+    return `${prompt}
+
+[cosmetic-regulatory-mode]
+COSMETIC REGULATORY MODE. 규제 준수 전문 모드 활성화.
+
+DELEGATE TO: regulatory-oracle
+- EU CosIng / Annex 확인
+- 한국 기능성 고시원료 확인
+- 중국 NMPA 등록 요건
+- 다중 국가 규제 매트릭스
+
+Markets: Korea, EU, USA, China, Japan, ASEAN`;
+  }
+};
+
+/**
  * Remove trigger words from a prompt
  */
 function removeTriggerWords(prompt: string, triggers: string[]): string {
@@ -343,7 +446,11 @@ export const builtInMagicKeywords: MagicKeyword[] = [
   ultraworkEnhancement,
   searchEnhancement,
   analyzeEnhancement,
-  ultrathinkEnhancement
+  ultrathinkEnhancement,
+  // Cosmetic R&D Specialists (EVAS Cosmetic Sisyphus)
+  cosmeticEnhancement,
+  safetyCosmeticEnhancement,
+  regulatoryCosmeticEnhancement
 ];
 
 /**

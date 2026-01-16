@@ -36,6 +36,14 @@ export { metisAgent, METIS_PROMPT_METADATA } from './metis.js';
 export { prometheusAgent, PROMETHEUS_PROMPT_METADATA } from './prometheus.js';
 export { qaTesterAgent, QA_TESTER_PROMPT_METADATA } from './qa-tester.js';
 
+// Cosmetic Specialist Agents (EVAS Cosmetic Sisyphus)
+export { formulationOracleAgent, FORMULATION_ORACLE_PROMPT_METADATA } from './formulation-oracle.js';
+export { safetyOracleAgent, SAFETY_ORACLE_PROMPT_METADATA } from './safety-oracle.js';
+export { regulatoryOracleAgent, REGULATORY_ORACLE_PROMPT_METADATA } from './regulatory-oracle.js';
+export { cosmeticLibrarianAgent, COSMETIC_LIBRARIAN_PROMPT_METADATA } from './cosmetic-librarian.js';
+export { ingredientExplorerAgent, INGREDIENT_EXPLORER_PROMPT_METADATA } from './ingredient-explorer.js';
+export { cosmeticJuniorAgent, COSMETIC_JUNIOR_PROMPT_METADATA } from './cosmetic-junior.js';
+
 // Legacy exports (backward compatibility - getAgentDefinitions and sisyphusSystemPrompt)
 export {
   getAgentDefinitions,
