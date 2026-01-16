@@ -311,6 +311,179 @@ claude
 
 ---
 
+## 범용 스킬 (Enhancement Skills)
+
+기본 동작에 추가로 활성화할 수 있는 강화 스킬입니다.
+
+### 스킬 목록
+
+| 스킬 | 명령어 | 설명 |
+|-----|-------|-----|
+| **ultrawork** | `/ultrawork <task>` | 최대 성능 모드 - 병렬 실행, 백그라운드 처리 |
+| **git-master** | 자동 감지 | Git 전문가 - 원자적 커밋, 스타일 감지, 히스토리 관리 |
+| **frontend-ui-ux** | 자동 감지 | UI/UX 전문가 - 대담한 디자인, 접근성 |
+| **deepinit** | `/deepinit [path]` | 코드베이스 문서화 - AGENTS.md 계층 생성 |
+| **release** | `/release <version>` | 릴리스 자동화 - 버전 범프, 태그, npm 배포 |
+
+### ultrawork - 최대 성능 모드
+
+복잡한 작업을 빠르게 처리해야 할 때 사용합니다.
+
+```
+/ultrawork 전체 에센스 라인업 배합 분석 및 안전성 평가 진행해줘
+```
+
+**특징:**
+- 병렬 에이전트 실행으로 속도 향상
+- 백그라운드 작업 (빌드, 테스트)
+- 스마트 모델 라우팅 (비용 최적화)
+
+**모델 라우팅:**
+| 작업 복잡도 | 모델 | 예시 |
+|-----------|-----|-----|
+| 단순 조회 | Haiku | "INCI명 확인" |
+| 일반 작업 | Sonnet | "성분 검색", "문서 작성" |
+| 복잡 분석 | Opus | "배합 안정성 분석", "규제 종합 검토" |
+
+### git-master - Git 전문가
+
+여러 파일을 변경할 때 자동으로 활성화됩니다.
+
+**핵심 규칙:**
+- 3+ 파일 변경 → 2+ 커밋
+- 5+ 파일 변경 → 3+ 커밋
+- 10+ 파일 변경 → 5+ 커밋
+
+**자동 감지 항목:**
+- 커밋 메시지 언어 (한국어/영어)
+- 커밋 스타일 (Semantic/Plain)
+- 디렉토리별 분리
+
+**유용한 명령어:**
+```bash
+# 특정 코드 추가 시점 찾기
+git log -S "Niacinamide" --oneline
+
+# 파일 히스토리 탐색
+git blame -L 10,20 formulation.json
+```
+
+### frontend-ui-ux - UI/UX 디자인
+
+프론트엔드/UI 작업 시 자동으로 활성화됩니다.
+
+**디자인 원칙:**
+- 대담한 미학 방향 설정
+- 구별되는 타이포그래피
+- 일관된 컬러 팔레트
+- 의미 있는 모션/애니메이션
+
+**지양 패턴:**
+- 일반적인 폰트 (Arial, Inter, Roboto)
+- 뻔한 색상 조합
+- 예측 가능한 레이아웃
+
+### deepinit - 코드베이스 문서화
+
+AI 에이전트가 코드베이스를 이해할 수 있도록 계층적 문서를 생성합니다.
+
+```
+/deepinit              # 현재 디렉토리 인덱싱
+/deepinit ./src        # 특정 경로 인덱싱
+/deepinit --update     # 기존 AGENTS.md 업데이트
+```
+
+**생성 구조:**
+```
+/AGENTS.md                    ← 루트 문서
+├── src/AGENTS.md             ← 소스 코드 문서
+│   ├── components/AGENTS.md  ← 컴포넌트 문서
+│   └── utils/AGENTS.md       ← 유틸리티 문서
+└── tests/AGENTS.md           ← 테스트 문서
+```
+
+### release - 릴리스 자동화
+
+```
+/release 1.1.0         # 특정 버전
+/release patch         # 패치 버전 증가
+/release minor         # 마이너 버전 증가
+```
+
+**자동 수행 작업:**
+1. 모든 파일의 버전 업데이트
+2. 테스트 실행
+3. 커밋 및 태그 생성
+4. npm 배포
+5. GitHub 릴리스 생성
+
+---
+
+## 범용 에이전트
+
+화장품 에이전트 외에 기본 제공되는 범용 에이전트입니다.
+
+| 에이전트 | 모델 | 용도 |
+|---------|-----|-----|
+| **oracle** | Opus | 아키텍처 분석, 디버깅 |
+| **librarian** | Sonnet | 문서 검색, 코드 이해 |
+| **explore** | Haiku | 빠른 파일/패턴 검색 |
+| **sisyphus-junior** | Sonnet | 집중 작업 실행 |
+| **document-writer** | Haiku | README, API 문서 작성 |
+| **frontend-engineer** | Sonnet | 컴포넌트 설계, 스타일링 |
+| **prometheus** | Opus | 전략적 계획 수립 |
+| **momus** | Opus | 계획 비평 검토 |
+| **metis** | Opus | 사전 계획 분석 |
+| **qa-tester** | Sonnet | CLI/서비스 테스트 |
+| **multimodal-looker** | Sonnet | 스크린샷/다이어그램 분석 |
+
+### 에이전트 사용 예시
+
+```
+# 복잡한 문제 분석
+Task(subagent_type="oracle", prompt="이 배합 안정성 이슈의 근본 원인 분석")
+
+# 빠른 파일 검색
+Task(subagent_type="explore", prompt="모든 배합 JSON 파일 찾기")
+
+# 문서 작성
+Task(subagent_type="document-writer", prompt="API 엔드포인트 문서 작성")
+
+# 계획 수립
+Task(subagent_type="prometheus", prompt="신제품 개발 워크플로우 계획")
+```
+
+---
+
+## 슬래시 명령어 전체 목록
+
+### 화장품 명령어
+
+| 명령어 | 설명 |
+|-------|-----|
+| `/formulation <query>` | 배합/처방 분석 |
+| `/safety-check <ingredient>` | 안전성 평가 |
+| `/regulatory <market>` | 규제 분석 |
+| `/ingredient <name>` | 성분 정보 조회 |
+| `/cosmetic <task>` | 화장품 모드 활성화 |
+
+### 시스템 명령어
+
+| 명령어 | 설명 |
+|-------|-----|
+| `/ultrawork <task>` | 최대 성능 모드 |
+| `/deepsearch <query>` | 심층 코드베이스 검색 |
+| `/deepinit [path]` | AGENTS.md 생성 |
+| `/analyze <target>` | 심층 분석 |
+| `/plan <description>` | 계획 세션 시작 |
+| `/review [plan-path]` | 계획 검토 |
+| `/prometheus <task>` | 전략적 계획 |
+| `/ralph-loop <task>` | 완료까지 자기참조 루프 |
+| `/cancel-ralph` | Ralph Loop 취소 |
+| `/release <version>` | 릴리스 자동화 |
+
+---
+
 ## 기반 기술
 
 이 프로젝트는 [oh-my-claude-sisyphus](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus)를 기반으로 화장품 R&D에 특화된 에이전트를 추가한 fork입니다.
@@ -318,7 +491,7 @@ claude
 ### 포함된 기본 기능
 - 19개 범용 에이전트 (oracle, librarian, explore 등)
 - 18개 라이프사이클 훅
-- 8개 빌트인 스킬 (ultrawork, git-master 등)
+- 5개 빌트인 스킬 (ultrawork, git-master, frontend-ui-ux, deepinit, release)
 - 매직 키워드 자동 감지
 - 스마트 모델 라우팅
 
