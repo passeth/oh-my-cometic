@@ -6,8 +6,6 @@
 
 [![Version](https://img.shields.io/badge/version-1.0.0-ff6b6b)](https://github.com/passeth/oh-my-cometic/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-d97706?logo=anthropic&logoColor=white)](https://docs.anthropic.com/claude-code)
 
 **Claude Code를 위한 화장품 R&D 전문 멀티에이전트 오케스트레이션 시스템**
@@ -115,33 +113,22 @@
 
 ## 설치
 
-### 방법 1: 설치 스크립트 (권장)
-
 ```bash
 git clone https://github.com/passeth/oh-my-cometic.git
 cd oh-my-cometic
-npm install
-npm run build
 ./scripts/install.sh
 ```
 
-### 방법 2: npm 글로벌 설치
+설치 완료 후 Claude Code를 재시작하면 바로 사용할 수 있습니다.
 
-```bash
-npm install -g oh-my-cosmetic
-```
-
-### 설치 후 설정
+### 설치 확인
 
 ```bash
 # Claude Code 시작
 claude
 
-# 프로젝트별 설정 (권장)
-/sisyphus-default
-
-# 또는 전역 설정
-/sisyphus-default-global
+# 설치 확인 (화장품 에이전트 목록)
+/cosmetic-analyze --help
 ```
 
 ---
@@ -736,7 +723,7 @@ K-Dense 수준의 기술 보고서 생성을 위한 핵심 스킬
 
 - [Claude Code](https://docs.anthropic.com/claude-code) 설치됨
 - Anthropic API 키 (`ANTHROPIC_API_KEY` 환경변수)
-- Node.js 20+
+- Node.js (hooks 실행용, 대부분의 시스템에 기본 설치됨)
 
 ---
 
@@ -748,8 +735,9 @@ MIT License
 
 ## 크레딧
 
-- 원본 프로젝트: [oh-my-claude-sisyphus](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus) by Yeachan Heo
-- 화장품 특화 확장: EVAS Cosmetic
+- 원본 Sisyphus: [oh-my-claude-sisyphus](https://github.com/Yeachan-Heo/oh-my-claude-sisyphus) by Yeachan Heo
+- 과학 리서치 스킬: [claude-scientific-skills](https://github.com/passeth/claude-scientific-skills) (화장품 특화 커스텀)
+- 화장품 특화 Fork: PASSETH
 
 ---
 
