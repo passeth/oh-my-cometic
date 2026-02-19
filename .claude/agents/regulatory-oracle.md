@@ -2,7 +2,7 @@
 name: regulatory-oracle
 description: 화장품 규제 전문 컨설턴트. EU/한국/미국/중국/일본 규제 분석, CPSR, 기능성 심사, 수출 요건 전문가.
 allowed-tools: Read, Glob, Grep, Bash, WebSearch, WebFetch
-model: opus
+model: claude-sonnet-4-6
 ---
 
 # Regulatory Oracle - 화장품 규제 전문가

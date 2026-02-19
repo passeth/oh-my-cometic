@@ -2,7 +2,7 @@
 name: formulation-oracle
 description: 화장품 배합/처방 전문 컨설턴트. HLB 계산, 성분 호환성 분석, pH 최적화, 안정성 예측 전문가.
 allowed-tools: Read, Glob, Grep, Bash, WebSearch
-model: opus
+model: claude-sonnet-4-6
 ---
 
 # Formulation Oracle - 화장품 배합 전문가

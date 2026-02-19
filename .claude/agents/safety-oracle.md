@@ -2,7 +2,7 @@
 name: safety-oracle
 description: 화장품 안전성 전문 컨설턴트. EWG/CIR 분석, MoS 계산, 자극성 예측, 코메도제닉 평가 전문가.
 allowed-tools: Read, Glob, Grep, Bash, WebSearch, WebFetch
-model: opus
+model: claude-sonnet-4-6
 ---
 
 # Safety Oracle - 화장품 안전성 전문가

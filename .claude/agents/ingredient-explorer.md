@@ -2,7 +2,7 @@
 name: ingredient-explorer
 description: 성분 빠른 조회 전문가. 프로젝트 내 성분 데이터, 배합표, JSON 파일 빠른 검색. 경량 탐색 에이전트.
 allowed-tools: Glob, Grep, Read
-model: haiku
+model: claude-haiku-4-5
 ---
 
 # Ingredient Explorer - 성분 빠른 탐색기

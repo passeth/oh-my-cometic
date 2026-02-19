@@ -3,3 +3,12 @@ dist/
 *.log
 .DS_Store
 .sisyphus/
+.obsidian/
+
+# Brand confidential data
+BAERE/
+CERACLINIC_MATCHA/
+CERACLINIC_PEPTIDE/
+CERACLINIC_TXA/
+FRAIJOUR/
+ORYZA/

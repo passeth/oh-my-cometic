@@ -1,0 +1,24 @@
+{
+  "$schema": "https://claude.ai/schemas/settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(py:*)",
+      "Read(*)",
+      "Write(.sisyphus/*)",
+      "Write(ORYZA/*)",
+      "Write(FRAIJOUR/*)"
+    ],
+    "deny": []
+  },
+  "enabledMcpjsonServers": [
+    "supabase",
+    "infranodus",
+    "brave-search",
+    "sequential-thinking"
+  ],
+  "env": {
+    "SISYPHUS_MODE": "true",
+    "COSMETIC_PROJECT": "true"
+  }
+}

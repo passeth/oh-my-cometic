@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+
+## v2.0.0 (2026-02-19)
+
+### 🆕 멀티모델 라우팅
+- 3티어 모델 라우팅 도입 (Opus/Sonnet/Haiku)
+- 에이전트별 기본 모델 설정 (claude-sonnet-4-6, claude-haiku-4-5, claude-opus-4-6)
+- ultrawork 키워드 감지 시 자동 모델 업그레이드
+- 예상 비용 절감: 50-60%
+
+### 🔧 훅 보강
+- keyword-detector: 한국어 키워드 추가 (심층분석, 백서, 화이트페이퍼, 카피라이팅, K-Dense, tech dna)
+- write-guard: 기존 파일 덮어쓰기 방지 (PreToolUse hook)
+- context-monitor: 컨텍스트 사용량 추적 (PostToolUse hook)
+
+### 📝 문서
+- UPGRADE_PLAN_V2.md: 업그레이드 전체 계획서
+- DIFF_ANALYSIS.md: oh-my-opencode v3.7.4 비교 분석
+- MODEL_ROUTING_V2.md: 멀티모델 라우팅 설계
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---

@@ -1,7 +1,7 @@
 ---
 name: prometheus
 description: Strategic planning consultant with interview workflow
-model: opus
+model: claude-opus-4-6
 ---
 
 <system-reminder>

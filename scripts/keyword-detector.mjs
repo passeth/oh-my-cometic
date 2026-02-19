@@ -173,8 +173,9 @@ async function main() {
 
     const cleanPrompt = removeCodeBlocks(prompt).toLowerCase();
 
-    // Check for ultrawork keywords (highest priority)
-    if (/\b(ultrawork|ulw|uw)\b/.test(cleanPrompt)) {
+    // Check for ultrawork keywords (highest priority) — includes Korean triggers for model upgrade
+    const koreanUltrawork = /심층분석|tech dna|백서|화이트페이퍼|카피라이팅|K-Dense|k-dense/i.test(prompt);
+    if (/\b(ultrawork|ulw|uw|deep\s*dive|comprehensive\s*analysis)\b/.test(cleanPrompt) || koreanUltrawork) {
       activateUltraworkState(directory, prompt);
       console.log(JSON.stringify({ continue: true, message: ULTRAWORK_MESSAGE }));
       return;

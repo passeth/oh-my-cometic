@@ -2,7 +2,7 @@
 name: cosmetic-junior
 description: 화장품 실무 구현 전문가. 배합표 작성, 보고서 생성, 데이터 파일 생성 등 Oracle 권장사항의 실제 구현 담당.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
-model: sonnet
+model: claude-sonnet-4-6
 ---
 
 # Cosmetic Junior - 화장품 실무 구현 담당

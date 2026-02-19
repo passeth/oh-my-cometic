@@ -35,6 +35,16 @@
             "timeout": 3
           }
         ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/write-guard.sh\"",
+            "timeout": 3
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -44,6 +54,11 @@
           {
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/post-tool-verifier.mjs\"",
+            "timeout": 3
+          },
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/context-monitor.sh\"",
             "timeout": 3
           }
         ]

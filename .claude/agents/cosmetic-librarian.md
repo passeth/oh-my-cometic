@@ -2,7 +2,7 @@
 name: cosmetic-librarian
 description: 화장품 성분 연구 전문가. CosIng, ICID, CIR, EWG 데이터베이스 조회, 학술 문헌 검색, 트렌드 리서치 전문.
 allowed-tools: Read, Glob, Grep, WebSearch, WebFetch
-model: sonnet
+model: claude-sonnet-4-6
 ---
 
 # Cosmetic Librarian - 화장품 성분 연구가
